@@ -2,8 +2,8 @@ import "../App.css";
 
 function Footer(props) {
   return (
-    <div className="App">
-      <h1>This is Footer component {props.num}</h1>
+    <div style={{ backgroundColor:"green", color:"white" , textAlign:"center"}} >
+      <h1>This is Footer component {props.message}</h1>
     </div>
   );
 }

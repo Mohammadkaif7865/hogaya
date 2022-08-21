@@ -1,9 +1,7 @@
-import "../App.css";
-
 function Header(props) {
   return (
-    <div className="App">
-      <h1>This is Header component {props.num}</h1>
+    <div style={{ backgroundColor: "green", color: "white" , textAlign: "center" }}>
+      <h1>This is Header component {props.message}</h1>
     </div>
   );
 }
