@@ -1,9 +1,9 @@
 import "./App.css";
 
-function Footer() {
+function Footer(props) {
   return (
     <div className="App">
-      <h1>This is Footer component</h1>
+      <h1>This is Footer component {props.num}</h1>
     </div>
   );
 }

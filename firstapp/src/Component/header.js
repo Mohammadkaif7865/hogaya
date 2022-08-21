@@ -1,9 +1,9 @@
 import "./App.css";
 
-function Header() {
+function Header(props) {
   return (
     <div className="App">
-      <h1>This is Header component</h1>
+      <h1>This is Header component {props.num}</h1>
     </div>
   );
 }
