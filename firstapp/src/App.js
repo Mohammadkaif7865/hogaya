@@ -10,15 +10,15 @@ class App extends Component {
       message: "Hello my child",
     };
   }
-  changeMessage() {
+  changeMessage = () => {
     this.setState({ message: "I am app your parent" });
-  }
+  };
   render() {
     return (
       <div className="App">
         <Header message={this.state.message} />
         <h1>This is app component</h1>
-        <button onClick={()=>this.changeMessage()}>message changed</button>
+        <button onClick={this.changeMessage}>message changed</button>
         <Footer message={this.state.message} />
       </div>
     );
