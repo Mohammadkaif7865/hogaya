@@ -18,7 +18,7 @@ class App extends Component {
       <div className="App">
         <Header message={this.state.message} />
         <h1>This is app component</h1>
-        <button onClick={this.changeMessage}>message changed</button>
+        <button onClick={()=>this.changeMessage()}>message changed</button>
         <Footer message={this.state.message} />
       </div>
     );
