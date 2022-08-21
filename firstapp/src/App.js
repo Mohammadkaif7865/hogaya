@@ -4,12 +4,11 @@ import Footer from "./Component/footer";
 import React, { useState } from "react";
 
 function App() {
-  let [num,setNum] = useState();
   return (
     <div className="App">
-      <Header num={num}></Header>
+      <Header></Header>
       <h1>This is app component</h1>
-      <Footer num={num}></Footer>
+      <Footer></Footer>
     </div>
   );
 }
