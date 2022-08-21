@@ -31,7 +31,7 @@ class App extends Component {
     fetch(url, { method: "GET" })
       .then((res) => res.json())
       .then((data) => {
-        this.setState({ data: data });
+      this.setState({ data: data });
       });
       console.log(this.state.data);
   }
