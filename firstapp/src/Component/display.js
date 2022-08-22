@@ -12,7 +12,6 @@ export default function Display(props) {
           <div className="price">Price : ₹ {item.cost}</div>
         </div>
       ))}
-      <h1>This is display</h1>
     </div>
   );
 }
