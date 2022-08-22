@@ -28,6 +28,7 @@ class Header extends Component {
     this.setState({
       val: event.target.value ? event.target.value : this.state.message,
     });
+    this.props.filterText(event.target.value);
   };
   render() {
     return (
