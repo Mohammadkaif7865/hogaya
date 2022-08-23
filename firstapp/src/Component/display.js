@@ -1,6 +1,5 @@
 import "../App.css";
 export default function Display(props) {
-  console.log(props.data);
   return (
     <div className="App">
       {props.data.length === 0 ? (
