@@ -48,7 +48,7 @@ class App extends Component {
     fetch(url, { method: "GET" })
       .then((res) => res.json())
       .then((data) => {
-        this.setState({ products: data });
+        this.setState({ products: data, filteredData: data });
       });
   }
   render() {
@@ -58,13 +58,7 @@ class App extends Component {
           message={this.state.message}
           filterText={(data) => this.filterText(data)}
         />
-        <Display
-          data={
-            this.state.filteredData.length === 0
-              ? this.state.products
-              : this.state.filteredData
-          }
-        />
+        <Display data={this.state.filteredData} />
         {/* <h1>This is app component</h1>
         <button onClick={this.changeMessage}>message changed</button> */}
         <Footer message={this.state.message} />
