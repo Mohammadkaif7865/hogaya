@@ -3,7 +3,7 @@ import React from "react";
 const Post = () => {
   //console.log(props)
   return (
-    <div className="panel panel-primary">
+    <div className="panel panel-success">
       <div className="panel-heading">
         <h3>Post Page</h3>
       </div>

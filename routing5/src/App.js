@@ -4,17 +4,19 @@ import Header from "./Component/Header";
 import Footer from "./Component/Footer";
 import Post from "./Component/Post";
 import Profile from "./Component/Profile";
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Switch>
-        <Route to="/" component={Home} />
-        <Route to="/profile" component={Post} />
-        <Route to="/Post" component={Profile} />
-      </Switch>
+      <div className="container">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/profile" component={Post} />
+          <Route path="/Post" component={Profile} />
+        </Switch>
+      </div>
       <Footer />
     </BrowserRouter>
   );

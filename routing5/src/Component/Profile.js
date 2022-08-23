@@ -3,7 +3,7 @@ import React from "react";
 const Profile = () => {
   //console.log(props)
   return (
-    <div className="panel panel-primary">
+    <div className="panel panel-danger">
       <div className="panel-heading">
         <h3>Profile Page</h3>
       </div>
