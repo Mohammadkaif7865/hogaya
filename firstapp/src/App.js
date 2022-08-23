@@ -39,7 +39,7 @@ class App extends Component {
   // };
   filterText(data) {
     let output = this.state.products.filter((item) => {
-      return item.name.toLowerCase().indexOf(data.toLowerCase()) > -1;
+      return item.name.toLowerCase().indexOf(data.toLowerCase()) > -1||item.category.toLowerCase().indexOf(data.toLowerCase()) > -1|| item.sub_category.toLowerCase().indexOf(data.toLowerCase()) > -1;
     });
 
     this.setState({ filteredData: output });
