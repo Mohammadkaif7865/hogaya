@@ -3,7 +3,7 @@ import "../App.css";
 import { Link } from "react-router-dom";
 const Header = () => {
   return (
-    <nav className="navbar navbar-default">
+    <nav className="navbar navbar-inverse">
       <div className="container-fluid">
         <div className="navbar-header">
           <Link className="navbar-brand" to="/">
