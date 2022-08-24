@@ -6,6 +6,7 @@ import Post from "./Component/Post";
 import Profile from "./Component/Profile";
 import Ghost from "./Component/Ghost";
 import KuchBhi from "./Component/KuchBhi";
+import PostDetails from "./Component/PostDetails";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/profile" component={Profile} />
-          <Route path="/Post" component={Post} />
+          <Route exact path="/Post" component={Post} />
+          <Route path="/Post/:topic" component={PostDetails} />
           <Route path="/kuchbhi" component={KuchBhi} />
           <Route path="/*" component={Ghost} />
         </Switch>

@@ -1,12 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
-const Post = () => {
-  //console.log(props)
+// # we can get params or :id in child component in match object of props of child component
+// * match> param or :id
+// # we can get query params in child component in Location object of props of child component
+// * Location > query params
+// * History > for redirection to previous route
+const PostDetails = (props) => {
   return (
     <div className="panel panel-success">
       <div className="panel-heading">
-        <h3>Post Page</h3>
+        <h3>{props.match.params.topic} Page</h3>
+        <h4>You are on {props.location.search.split("=")[1]}</h4>
       </div>
       <div className="panel-body">
         <p>
@@ -17,15 +20,9 @@ const Post = () => {
           five centuries, but also the leap into electronic typesetting,
           remaining essentially unchanged.
         </p>
-          <h1>Javascript</h1>
-          <Link to="/Post/Javascript?page=1" className="btn btn-primary">Details</Link>
-          <h1>Node</h1>
-          <Link to="/Post/Node?page=4" className="btn btn-dark">Details</Link>
-          <h1>React</h1>
-          <Link to="/Post/React?page=3" className="btn btn-success">Details</Link>
       </div>
     </div>
   );
 };
 
-export default Post;
+export default PostDetails;
