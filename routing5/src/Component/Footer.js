@@ -3,7 +3,9 @@ import "../App.css";
 const Footer = () => {
   return (
     <div className="App">
-      <h1>Footer</h1>
+      <h1 style={{ backgroundColor: "#333", color: "white", padding: "20px" }}>
+        Footer
+      </h1>
     </div>
   );
 };
