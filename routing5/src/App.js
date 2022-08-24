@@ -4,6 +4,8 @@ import Header from "./Component/Header";
 import Footer from "./Component/Footer";
 import Post from "./Component/Post";
 import Profile from "./Component/Profile";
+import Ghost from "./Component/Ghost";
+import KuchBhi from "./Component/KuchBhi";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/profile" component={Profile} />
           <Route path="/Post" component={Post} />
+          <Route path="/kuchbhi" component={KuchBhi} />
+          <Route path="/*" component={Ghost} />
         </Switch>
       </div>
       <Footer />
