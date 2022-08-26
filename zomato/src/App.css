@@ -23,6 +23,958 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+}
+
+#header-index {
+  background-image: url('https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png');
+  height: 500px;
+  background-size: cover;
+  color: white;
+}
+
+.font-mid {
+  font-size: 20px;
+}
+
+#header-list {
+  width: 100%;
+  border-bottom: 2px solid rgb(239, 234, 234);
+}
+
+#header-list a {
+  color: black !important;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: rgb(174, 158, 158);
+}
+
+a:hover {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.confined {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.search {
+  color: black !important;
+  height: 50px;
+  width: 90%;
+  max-width: 800px;
+}
+
+.search-loc-logo {
+  width: 5%;
+  float: left;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: white;
+  height: 50px;
+  padding: 4px;
+  position: relative;
+  z-index: 2;
+  font-size: 30px;
+  color: red;
+}
+
+.search input {
+  height: 50px;
+  background-color: white;
+  float: center;
+  border: 2px solid white;
+  width: 60%;
+  padding: 10px;
+}
+
+.search select {
+  background-color: white;
+  height: 50px;
+  float: left;
+  width: 25%;
+  border: 2px solid white;
+  border-right: 2px solid rgb(221, 215, 215);
+  padding: 10px;
+  /* border: 1px solid white; */
+}
+
+.search button {
+  border: 2px solid white;
+  background-color: white;
+  height: 50px;
+  float: right;
+  width: 10%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.paths-to {
+  width: 100%;
+  margin-bottom: 20px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 10px;
+}
+
+.paths-to a {
+  color: black;
+}
+
+.p-i-to {
+  width: 23%;
+  height: 250px;
+  margin: 2px;
+  display: inline-block;
+}
+
+.p-i-to:hover {
+  transform: scale(1.05);
+}
+
+.p-i-to img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.p-i-to p {
+  margin-top: 2px;
+  border-radius: 10px;
+  border: 2px solid rgb(236, 228, 228);
+  text-align: center;
+  padding: 10px;
+}
+
+.gold-color {
+  color: gold;
+}
+
+.rating-owl-rest {
+  float: right;
+  background-color: rgb(67, 201, 67);
+  padding: 4px;
+}
+
+.rest-name {
+  padding: 5px;
+}
+
+.instr-w-w {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.owl-item .item {
+  margin-right: 5px;
+}
+
+.owl-item a {
+  color: black;
+}
+
+.owl-1 .owl-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 10%;
+}
+
+.owl-1 .owl-item p {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.owl-2 .owl-item img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.owl-2 .owl-item p {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.float-b-t-t {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  position: fixed;
+  z-index: 1111;
+  bottom: 20px;
+  right: 20px;
+}
+
+.foot-m {
+  display: flex;
+  height: 70px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+footer a {
+  color: rgb(109, 94, 94);
+}
+
+.foot-wrap {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  border-bottom: 1px solid grey;
+  font-size: calc(8px + 0.5vw) !important;
+}
+
+.foot-p-c {
+  text-align: left;
+}
+
+.dark-logo a {
+  color: black;
+}
+
+.foot-p-c img {
+  max-width: 130px;
+  width: 90%;
+  display: block;
+  margin-top: 10px;
+}
+
+.we-deliver {
+  text-align: center;
+  padding: 10px;
+  max-width: 1100px;
+  margin: auto;
+  border-bottom: 1px solid grey;
+}
+
+.cities-m {
+  display: inline-block;
+  padding: 3px;
+  margin: 5px;
+}
+
+.last-foot-m {
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  color: gray;
+  font-size: calc(6px + 0.5vw) !important;
+}
+
+.navbar-mine {
+  display: flex;
+  padding: 20px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.n-n-r {
+  display: flex;
+  width: 50%;
+  justify-content: right;
+}
+
+.n-n-r p {
+  margin-left: 2vw;
+}
+
+.n-n-l {
+  display: flex;
+  width: 50%;
+  justify-content: left;
+}
+
+.n-n-l h1 {
+  margin-right: 2vw;
+}
+
+.left-list-nav {
+  display: flex;
+  width: 50%;
+  justify-content: left;
+  align-items: center;
+}
+
+.left-list-nav h1 {
+  margin-right: 2vw;
+}
+
+.filter-search {
+  width: 100%;
+  position: sticky;
+  z-index: 9;
+  background-color: white;
+  padding: 10px;
+  top: 0px;
+  left: 0px;
+}
+
+.filter-search-detail {
+  width: 100%;
+  z-index: 9;
+  background-color: white;
+  padding: 10px;
+}
+
+.filter-my {
+  display: flex;
+  width: 100%;
+  height: 45px;
+  color: grey;
+  padding: 5px;
+  margin: auto;
+  max-width: 1100px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+
+/* width */
+
+.filter-my::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Track */
+
+.filter-my::-webkit-scrollbar-track {
+  background: rgb(211, 129, 129);
+}
+
+
+/* Handle */
+
+.filter-my::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0);
+}
+
+
+/* Handle on hover */
+
+
+/* .filter-my::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} */
+
+.filters {
+  margin: 5px;
+  flex-shrink: 0;
+  height: 35px;
+  border: 2px solid rgb(227, 216, 216);
+  padding: 5px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.search-bar-listing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  margin: auto;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.search-bar-listing input {
+  width: 71%;
+  height: 100%;
+  padding: 5px;
+  border: 2px solid rgb(243, 234, 234);
+}
+
+.search-bar-listing button {
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  width: 40px;
+  font-size: 20px;
+  color: red;
+  background-color: white;
+  border: 2px solid rgb(243, 234, 234);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.search-bar-listing select {
+  height: 100%;
+  width: 20%;
+  background-color: white;
+  border-right: 2px solid rgb(243, 234, 234);
+  border-top: 2px solid rgb(243, 234, 234);
+  border-bottom: 2px solid rgb(243, 234, 234);
+  border-left: 2px solid white;
+}
+
+.search-loc-logo-li {
+  position: relative;
+  z-index: 2;
+  width: 30px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-left: 2px solid rgb(243, 234, 234);
+  border-top: 2px solid rgb(243, 234, 234);
+  border-bottom: 2px solid rgb(243, 234, 234);
+  border-right: 2px solid white;
+  background-color: white;
+  height: 100%;
+  padding: 3px;
+  position: relative;
+  z-index: 2;
+  font-size: 20px;
+  color: red;
+}
+
+.right-list-nav {
+  display: flex;
+  width: 50%;
+  justify-content: right;
+}
+
+.right-list-nav p {
+  margin-left: 2vw;
+}
+
+#demo {
+  color: black;
+  width: calc(100px + 40vw);
+}
+
+#demo a {
+  color: black;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 50vw;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Listing page css*/
+
+.paths-to-2 {
+  width: 100%;
+  margin-bottom: 20px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 10px;
+}
+
+.paths-to-2 a {
+  color: black;
+}
+
+.p-i-to-2 {
+  width: 31%;
+  height: 350px;
+  margin: 3px;
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.p-i-to-2:hover {
+  transform: scale(1.05);
+}
+
+.p-i-to-2 img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 10px;
+  position: relative;
+}
+
+.p-i-to-2 .details-listing {
+  position: relative;
+  height: 28%;
+  margin-top: 2px;
+  border-radius: 10px;
+  border: 2px solid rgb(236, 228, 228);
+  text-align: left;
+  padding: 10px;
+}
+
+.d-l-1 {
+  width: 100%;
+  height: 30px;
+  margin-top: 5px;
+}
+
+.offer-mm {
+  position: absolute;
+  color: white;
+  background-color: rgb(39, 190, 39);
+  padding: 3px;
+  z-index: 2;
+  top: 50%;
+  left: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 12px;
+}
+
+.offer-extra-mm {
+  position: absolute;
+  color: white;
+  background-color: rgb(223, 18, 52);
+  padding: 3px;
+  z-index: 2;
+  top: 5%;
+  right: 0;
+  font-size: 12px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.dependable {
+  position: absolute;
+  color: white;
+  background-color: rgb(0, 170, 255);
+  padding: 3px;
+  z-index: 2;
+  top: 60%;
+  left: 0;
+  font-size: 12px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.float-r {
+  float: right;
+  height: 100%;
+  width: 30%;
+  padding: 3px;
+  overflow: hidden;
+}
+
+.rate-my {
+  background-color: rgb(39, 190, 39);
+  color: white;
+  padding: 3px;
+  border-radius: 5px;
+  font-size: 10px;
+}
+
+.g-g-old {
+  color: gold;
+}
+
+.adjust-rate {
+  padding-left: 7%;
+  padding-top: 4px;
+  font-size: 15px;
+}
+
+.float-l {
+  font-size: 15x;
+  float: left;
+  height: 100%;
+  width: 70%;
+  overflow: hidden;
+  padding: 3px;
+}
+
+.time-mm {
+  position: absolute;
+  color: grey;
+  background-color: rgb(255, 255, 255);
+  padding: 3px;
+  z-index: 2;
+  top: 55%;
+  right: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+
+/*Modal css*/
+
+.modal-flex-body {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+.filter-p-1 {
+  width: 30%;
+  background-color: rgb(243, 239, 239);
+}
+
+.filter-p-2 {
+  width: 60%;
+  padding: 10px;
+}
+
+.filter-p-1 h4 {
+  padding: 10px;
+}
+
+.filter-p-1 a {
+  color: black;
+}
+
+
+/* Details page */
+
+.restaurant-image {
+  display: grid;
+  grid-template-areas: 'pic1 pic1 pic1 pic2 pic3 ' 'pic1 pic1 pic1 pic4 no-pic';
+  max-width: 1100px;
+  width: 100%;
+  gap: 5px;
+  margin: auto;
+  padding: 10px;
+}
+
+.pic-item {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 1;
+  filter: brightness(0.85);
+  border-radius: 10px;
+}
+
+.pic-item:hover {
+  opacity: 1.23;
+  filter: brightness(1.1);
+  transform: scale(1.1);
+  transition: transform 0.4s ease-in-out 0s, opacity 1.63s ease 0s, filter 0.4s ease 0s;
+}
+
+.pic1 {
+  grid-area: pic1;
+  overflow: hidden;
+}
+
+.pic2 {
+  grid-area: pic2;
+  overflow: hidden;
+}
+
+.pic3 {
+  grid-area: pic3;
+  overflow: hidden;
+  position: relative;
+}
+
+.pic4 {
+  grid-area: pic4;
+  overflow: hidden;
+}
+
+.no-pic {
+  position: relative;
+  grid-area: no-pic;
+  overflow: hidden;
+}
+
+.my-add-photo {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  top: 40%;
+  text-align: center;
+  color: black;
+  font-size: calc(20px + 0.5vw);
+}
+
+.restaurant-name-info {
+  max-width: 1100px;
+  padding: 10px;
+  width: 100%;
+  margin: auto;
+}
+
+.cart {
+  position: relative;
+  top: 0;
+  left: 0;
+  font-size: 40px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  float: right;
+  color: rgb(221, 217, 217);
+  margin-right: 10px;
+}
+
+.grey-color {
+  color: grey;
+}
+
+.cart-logo {
+  position: relative;
+}
+
+.cart-counts {
+  color: black;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 25px;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+}
+
+.restaurant-name-info p {
+  margin: 5px;
+}
+
+.address-rest {
+  width: 100%;
+  overflow: hidden;
+}
+
+.rest-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 4;
+}
+
+.color-red {
+  color: red;
+}
+
+.border-2-grey {
+  border: 2px solid rgb(211, 204, 204);
+}
+
+.rest-header-review {
+  margin: 5px;
+}
+
+.rest-nav {
+  background-color: white;
+  display: flex;
+  width: 100%;
+  height: 65px;
+  color: grey;
+  margin: auto;
+  max-width: 1100px;
+  overflow: hidden;
+  position: sticky;
+  top: 83px;
+  left: 0;
+  z-index: 3;
+  font-size: 25px;
+}
+
+.restaurant-name-info a {
+  color: rgb(94, 88, 88);
+}
+
+.rest-nav-item {
+  padding: 10px;
+  white-space: nowrap;
+}
+
+.rest-nav-active {
+  border-bottom: 5px solid red;
+}
+
+.food-cat-all {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.cat {
+  width: 30%;
+  position: sticky;
+  top: 140px;
+  left: 0;
+  border-right: 2px solid rgb(215, 205, 205);
+  background-color: white;
+  text-align: left;
+  font-size: 18px;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+.cat p {
+  margin-top: 10px;
+}
+
+.menu-active {
+  border-right: 5px solid red;
+  background-image: linear-gradient(to right, white, rgb(248, 212, 212));
+  color: red;
+}
+
+.food-all {
+  width: 70%;
+  padding: 10px;
+  position: relative;
+}
+
+.rest-item-card {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  margin-top: 10px;
+}
+
+.food-all-cat {
+  width: 100%;
+}
+
+.food-all-cat h4 {
+  position: sticky;
+  top: 140px;
+  left: 0;
+  z-index: 2;
+  background-color: white;
+  padding: 10px;
+}
+
+.image-section-left {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.set-it-up {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background-color: white;
+}
+
+.dis-section-right {
+  width: 65%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.make-it-on {
+  color: green;
+  text-align: center;
+  float: right;
+  font-size: 30px;
+  border: 2px solid green;
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (min-width: 769px) {
+  #my-nav-bar {
+      display: none;
+  }
+  .title-my {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .n-u-i {
+      display: none;
+  }
+  #get-the-app {
+      display: none;
+  }
+  .title-my-2 {
+      display: none;
+  }
+  .p-i-to-2 {
+      width: 48%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .p-i-to {
+      width: 48%;
+  }
+  .restaurant-image {
+      grid-template-areas: 'pic1 pic1 pic1 pic2' 'pic1 pic1 pic1 pic4' 'pic3 pic3 no-pic no-pic';
+  }
+  .cat {
+      display: none;
+  }
+  .rest-nav {
+      font-size: 15px;
+  }
+  .rest-item-card {
+      font-size: 12px;
+  }
+  .food-all {
+      width: 100%;
+  }
+  .image-section-left {
+      width: 125px;
+      height: 125px;
+  }
+  .make-it-on {
+      font-size: 20px;
+  }
+  .user-and-restaurant {
+      font-size: 5px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .p-i-to-2 {
+      width: 98%;
+  }
+}
 
 .App-link {
   color: #61dafb;
