@@ -1,7 +1,7 @@
 import "./App.css";
 import Header from "./Component/Header";
 import Footer from "./Component/Footer";
-import Home from "./Component/Home";
+import Home from "./Component/Home/Home";
 import Listing from "./Component/Listing";
 import Detail from "./Component/Detail";
 import Ghost from "./Component/Ghost";
