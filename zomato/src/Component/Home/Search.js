@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Search.css";
 import { withRouter } from "react-router-dom";
 
-const url = "https://zomatoajulypi.herokuapp.com/location";
+const url = "https://restaurantmysite.herokuapp.com/location";
 const restUrl = "https://zomatoajulypi.herokuapp.com/restaurant";
 
 class Search extends Component {
@@ -11,7 +11,7 @@ class Search extends Component {
 
     this.state = {
       location: "",
-      restaurants: "",
+      restaurants: [],
     };
   }
 
