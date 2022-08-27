@@ -11,11 +11,12 @@ class Search extends Component {
 
     this.state = {
       location: "",
-      restaurants: [],
+      restaurants: "",
     };
   }
 
   renderCity = (data) => {
+    // ! to escape from code break we have to conditionally render the data
     if (data) {
       return data.map((item) => {
         return (
@@ -55,7 +56,6 @@ class Search extends Component {
   };
 
   render() {
-
     return (
       <>
         <div id="search">
