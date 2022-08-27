@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./search.css";
+import "./Search.css";
 import { withRouter } from "react-router-dom";
 
 const url = "https://zomatoajulypi.herokuapp.com/location";
