@@ -3,7 +3,7 @@ import "./Search.css";
 import { withRouter } from "react-router-dom";
 
 const url = "https://restaurantmysite.herokuapp.com/location";
-const restUrl = "https://zomatoajulypi.herokuapp.com/restaurant";
+const restUrl = "https://restaurantmysite.herokuapp.com/restaurants";
 
 class Search extends Component {
   constructor(props) {
@@ -55,7 +55,7 @@ class Search extends Component {
   };
 
   render() {
-    console.log(">>>search>>>", this.props);
+
     return (
       <>
         <div id="search">
