@@ -44,8 +44,8 @@ class Listing extends Component {
                 }}
               /> */}
             </div>
-          </div>
           <ListingDisplay listData={this.state.restaurants} />
+          </div>
         </div>
       </>
     );

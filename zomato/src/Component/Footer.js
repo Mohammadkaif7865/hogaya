@@ -31,16 +31,16 @@ export default function Footer() {
             <h3>Back to top</h3>
           </div>
         </Link>
-        <Link to="/">
-          <div
-            className="float-b-t-t"
-            style={{ display: visible ? "inline" : "none" }}
-          >
-            <h3>
-              <i className="bi bi-chevron-up" onClick={scrollToTop}></i>
-            </h3>
-          </div>
-        </Link>
+
+        <div
+          className="float-b-t-t"
+          style={{ display: visible ? "inline" : "none" }}
+        >
+          <h3>
+            <i className="bi bi-chevron-up" onClick={scrollToTop}></i>
+          </h3>
+        </div>
+
         <div className="we-deliver">
           <h1>Cities We Deliver To</h1>
           <Link to="/">
