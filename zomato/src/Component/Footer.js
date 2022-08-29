@@ -26,12 +26,6 @@ export default function Footer() {
   return (
     <>
       <footer>
-        <Link to="/">
-          <div className="foot-m">
-            <h3>Back to top</h3>
-          </div>
-        </Link>
-
         <div
           className="float-b-t-t"
           style={{ display: visible ? "inline" : "none" }}
