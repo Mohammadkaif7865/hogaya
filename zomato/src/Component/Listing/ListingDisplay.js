@@ -59,7 +59,7 @@ const ListingDisplay = (props) => {
       return (
         <div>
           <img
-            src="https://i.ibb.co/30Fq85D/loader.gif"
+            src="https://i.ibb.co/GRf0ygr/1-Cs-J05-WEGfun-YMLGfs-T2s-XA.gif"
             alt="loader"
           />
           {/* https://i.ibb.co/m6TSbQ6/loader-gif.gif
