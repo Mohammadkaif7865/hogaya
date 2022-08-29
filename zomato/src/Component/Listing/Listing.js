@@ -19,9 +19,16 @@ class Listing extends Component {
   setDataPerFilter = (data) => {
     this.setState({ restaurants: data });
   };
+  scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+      /* you can also use 'auto' behaviour
+               in place of 'smooth' */
+    });
+  };
+ 
   render() {
-    console.log(this.state.restaurants);
-    console.log(this.props.match.params.id);
     return (
       <>
         <div className="row">
@@ -44,7 +51,7 @@ class Listing extends Component {
                 }}
               /> */}
             </div>
-          <ListingDisplay listData={this.state.restaurants} />
+            <ListingDisplay listData={this.state.restaurants} />
           </div>
         </div>
       </>
@@ -58,6 +65,7 @@ class Listing extends Component {
     axios.get(`${url}?mealId=${mealId}`).then((res) => {
       this.setState({ restaurants: res.data });
     });
+    this.scrollToTop();
   }
 }
 
