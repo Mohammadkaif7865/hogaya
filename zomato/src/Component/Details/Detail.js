@@ -4,7 +4,7 @@ import "./Details.css";
 import { Link } from "react-router-dom";
 import MenuDisplay from "./menuDisplay";
 
-const url = "http://zomatoajulypi.herokuapp.com";
+const url = "https://restaurantmysite.herokuapp.com";
 
 class RestDetails extends Component {
   constructor() {
