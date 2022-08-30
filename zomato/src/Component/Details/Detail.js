@@ -30,6 +30,14 @@ class RestDetails extends Component {
       `/placeOrder/${this.state.details.restaurant_name}`
     );
   };
+  scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+      /* you can also use 'auto' behaviour
+               in place of 'smooth' */
+    });
+  };
 
   render() {
     //let details = this.state.details
@@ -102,9 +110,10 @@ class RestDetails extends Component {
   async componentDidMount() {
     let restId = this.props.location.search.split("=")[1];
     let response = await axios.get(`${url}/details/${restId}`);
-    console.log(">>>>", response.data);
+    // console.log(">>>>", response.data);
     let menu = await axios.get(`${url}/menu/${restId}`);
     this.setState({ details: response.data[0], menuList: menu.data });
+    this.scrollToTop();
   }
 }
 

@@ -33,7 +33,7 @@ class MenuDisplay extends Component {
                     <div key={item.menu_id}>
                             <div className="col-md-7">
                                 <b>{item.menu_id}</b>
-                                <img src={item.menu_image} style={{height:80,width:80}}/>&nbsp;
+                                <img src={item.menu_image} style={{height:80,width:80}} alt="img"/>&nbsp;
                                 {item.menu_name} - Rs.{item.menu_price}
                             </div>
                             <div className="col-md-4">
