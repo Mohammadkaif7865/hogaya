@@ -4,7 +4,7 @@ import Footer from "./Component/Footer";
 import Home from "./Component/Home/Home";
 import Listing from "./Component/Listing/Listing";
 import Detail from "./Component/Details/Detail";
-import Ghost from "./Component/Ghost"
+import Ghost from "./Component/Ghost";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
