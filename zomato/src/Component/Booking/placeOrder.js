@@ -132,7 +132,7 @@ class PlaceOrder extends Component {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data)
+                console.log(data,this.state.cost)
                 let totalPrice = 0;
                 data.map((item) => {
                     totalPrice = totalPrice + parseFloat(item.menu_price)
