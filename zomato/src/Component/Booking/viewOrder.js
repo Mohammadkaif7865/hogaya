@@ -64,7 +64,7 @@ class ViewOrder extends Component {
         //console.log(`${url}?email=${email}`)
         setTimeout(() => {
             axios.get(`${url}`).then((res) => { this.setState({ orders: res.data }); console.log(res.data); })
-        }, 2000);
+        }, 1000);
 
     }
 }
