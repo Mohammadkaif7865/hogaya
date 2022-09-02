@@ -40,7 +40,7 @@ class PlaceOrder extends Component {
                 return (
                     <div className="orderItems" key={item.menu_id}>
                         <img src={item.menu_image} alt={item.menu_name} />
-                        <h3>{item.menu_name}</h3>
+                        <h5>{item.menu_name}</h5>
                         <h4>Rs. {item.menu_price}</h4>
                     </div>
                 )
@@ -98,7 +98,7 @@ class PlaceOrder extends Component {
                                         value={this.state.address} onChange={this.handleChange} />
                                 </div>
                                 <div className="row">
-                                {this.renderItem(this.state.menuItem)}
+                                    {this.renderItem(this.state.menuItem)}
                                     <div className="col-md-12">
                                         <h2>Total Price is Rs.{this.state.cost}</h2>
                                     </div>
@@ -132,10 +132,23 @@ class PlaceOrder extends Component {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data,this.state.cost)
+                let count = [];
+                let j = 1;
+                for (let i = 0; i < orderId.length; i++) {
+                    if (orderId[i] === orderId[i + 1]) {
+                        j++;
+                    }
+                    else {
+                        count.push(j);
+                        j = 1;
+
+                    }
+
+                }
+                sessionStorage.setItem('repeatCount', count);
                 let totalPrice = 0;
-                data.map((item) => {
-                    totalPrice = totalPrice + parseFloat(item.menu_price)
+                data.map((item, i) => {
+                    totalPrice = totalPrice + count[i] * parseFloat(item.menu_price)
                     return 'ok'
                 })
                 this.setState({ menuItem: data, cost: totalPrice })

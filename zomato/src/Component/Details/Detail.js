@@ -25,7 +25,7 @@ class RestDetails extends Component {
   };
 
   proceed = () => {
-    sessionStorage.setItem("menu", this.state.userItem);
+    sessionStorage.setItem("menu", this.state.userItem.sort(function (a, b) { return a - b }));
     this.props.history.push(
       `/placeOrder/${this.state.details.restaurant_name}`
     );
