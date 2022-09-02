@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import OrderDisplay from './orderDisplay';
 
-
-const url = " https://restaurantmysite.herokuapp.com/orders";
+// http://localhost:9100/orders
+// https://restaurantmysite.herokuapp.com/orders
+const url = "http://localhost:9100/orders";
 const updateUrl = "https://restaurantmysite.herokuapp.com/updateOrder"
 
 class ViewOrder extends Component {
