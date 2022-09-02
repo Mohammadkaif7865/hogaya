@@ -4,9 +4,9 @@ const OrderDisplay = (props) => {
 
     const renderTable = ({orderData}) => {
         if(orderData){
-            return orderData.map((item) => {
+            return orderData.map((item,i) => {
                 return(
-                    <tr key={item.id}>
+                    <tr key={i}>
                         <td>{item.id}</td>
                         <td>{item.hotel_name}</td>
                         <td>{item.name}</td>

@@ -32,7 +32,7 @@ class PlaceOrder extends Component {
             },
             body: JSON.stringify(obj)
         })
-        //.then(this.props.history.push('/viewBooking'))
+        .then(this.props.history.push('/viewBooking'))
     }
     renderItem = (data) => {
         if (data) {

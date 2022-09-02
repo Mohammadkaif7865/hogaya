@@ -46,8 +46,8 @@ class ViewOrder extends Component {
                     "bank_name": queryp.split('&')[3].split('=')[1]
                 }
                 let id = queryp.split('&')[1].split('=')[1].split('_')[1];
-                console.log(">>>", `${updateUrl}/${id}`)
-                console.log(data)
+                // console.log(">>>", `${updateUrl}/${id}`)
+                // console.log(data)
                 fetch(`${updateUrl}/${id}`, {
                     method: 'PUT',
                     headers: {
@@ -59,11 +59,11 @@ class ViewOrder extends Component {
             }
         }
         //let email = sessionStorage.getItem('userinfo')
-        console.log(">>>>", sessionStorage.getItem('userinfo'))
+        // console.log(">>>>", sessionStorage.getItem('userinfo'))
         //console.log(`${url}?email=${email}`)
-        axios.get(`${url}`).then((res) => { this.setState({ orders: res.data }) })
-    }
+        axios.get(`${url}`).then((res) => { this.setState({ orders: res.data }); console.log(res.data); })
 
+    }
 }
 
 export default ViewOrder
