@@ -62,7 +62,9 @@ class ViewOrder extends Component {
         //let email = sessionStorage.getItem('userinfo')
         // console.log(">>>>", sessionStorage.getItem('userinfo'))
         //console.log(`${url}?email=${email}`)
-        axios.get(`${url}`).then((res) => { this.setState({ orders: res.data }); console.log(res.data); })
+        setTimeout(() => {
+            axios.get(`${url}`).then((res) => { this.setState({ orders: res.data }); console.log(res.data); })
+        }, 2000);
 
     }
 }
