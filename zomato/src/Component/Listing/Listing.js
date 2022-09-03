@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./Listing.css";
 import ListingDisplay from "./ListingDisplay";
-// import CuisineFilter from "../filters/cuisineFilter";
-// import CostFilter from "../filters/costFilter";
+import CuisineFilter from "../Filters/cuisineFilter";
+import CostFilter from "../Filters/costFilter";
 
 const url = "https://restaurantmysite.herokuapp.com/restaurants";
 
@@ -38,18 +38,18 @@ class Listing extends Component {
                 <h3>Filters</h3>
               </center>
               <hr />
-              {/* <CuisineFilter
+              <CuisineFilter
                 mealId={this.props.match.params.id}
                 restPerCuisine={(data) => {
                   this.setDataPerFilter(data);
                 }}
-              /> */}
+              />
               <hr />
-              {/* <CostFilter
+              <CostFilter
                 restPerCost={(data) => {
                   this.setDataPerFilter(data);
                 }}
-              /> */}
+              />
             </div>
             <ListingDisplay listData={this.state.restaurants} />
           </div>
