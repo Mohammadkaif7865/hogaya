@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 
 
-const url = "https://developerjwt.herokuapp.com/api/auth/register";
+const url = "https://authmdkaif.herokuapp.com/api/auth/register";
 
 class Register extends Component {
     constructor(props){
@@ -11,7 +11,7 @@ class Register extends Component {
             name:'',
             email:'',
             password:'',
-            phone:'435346544'
+            phone:''
         }
     }
 
@@ -61,7 +61,7 @@ class Register extends Component {
                                 <input id="phone" name="phone" className="form-control"
                                 value={this.state.phone} onChange={this.handleChange}/>
                             </div>
-                            <buttin className="btn btn-success" onClick={this.handleSubmit}>Register</buttin>
+                            <button className="btn btn-success" onClick={this.handleSubmit}>Register</button>
                         </div>
                         
                     </div>

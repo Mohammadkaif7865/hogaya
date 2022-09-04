@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 
-const url = "https://developerjwt.herokuapp.com/api/auth/login";
+const url = "https://authmdkaif.herokuapp.com/api/auth/login";
 
 class Login extends Component {
 

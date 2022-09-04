@@ -49,10 +49,10 @@ export default function Header() {
             </Link>
           </div>
           <div className="right-list-nav font-mid">
-            <Link to="/" className="n-u-i">
+            <Link to="/register" className="n-u-i">
               <p>sign up</p>
             </Link>
-            <Link to="/" className="n-u-i">
+            <Link to="/login" className="n-u-i">
               <p>log in</p>
             </Link>
             <Link to="/" className="n-u-i">
