@@ -14,6 +14,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import React, { useState } from "react";
 function App() {
   const [name, setName] = useState("");
+  console.log(name);
   return (
     <BrowserRouter>
       <Header name={name} />

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link,withRouter } from "react-router-dom";
 const url = "https://authmdkaif.herokuapp.com/api/auth/getInfo";
-export default function UserInfo(props) {
+ function UserInfo(props) {
     const [user, setUser] = useState("");
     useEffect(() => {
         if (sessionStorage.getItem('x-access-token')) {
@@ -22,6 +22,12 @@ export default function UserInfo(props) {
             console.log('Invalid token');
         }
     }, [])
+
+    function logout(){
+        sessionStorage.clear();
+        props.setName("");
+        props.history.push("/");
+    }
     return (
         <>
             <div className="container">
@@ -29,7 +35,9 @@ export default function UserInfo(props) {
                 <h3>Phone Number : {user.phone}</h3>
                 <h3>Email : {user.email}</h3>
                 <Link to="/" className="btn btn-primary">Back to Home</Link>
+                <button className="btn btn-danger" onClick={logout}>Logout</button>
             </div>
         </>
     )
 }
+export default withRouter(UserInfo);

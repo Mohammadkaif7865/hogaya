@@ -8,7 +8,11 @@ export default function Header(props) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  function logout(){
+    sessionStorage.clear();
+    props.setName("");
+    props.history.push("/");
+}
   return (
     <>
       <header id="header-list">
@@ -49,17 +53,21 @@ export default function Header(props) {
             </Link>
           </div>
           <div className="right-list-nav font-mid">
-            <Link to="/register" className="n-u-i">
-              <p>sign up</p>
-            </Link>
-            <Link to="/login" className="n-u-i">
+            {
+              !props.name ? <Link to="/register" className="n-u-i">
+                <p>sign up</p>
+              </Link> : null
+            }
+            <Link to={props.name ? "/userInfo" : "/login"} className="n-u-i">
               {
                 props.name ? <p>Hi {props.name}</p> : <p>log in</p>
               }
             </Link>
-            <Link to="/" className="n-u-i">
-              <p>Add restaurant</p>
-            </Link>
+            {
+              props.name ? <Link to="/userInfo" className="n-u-i">
+              <p>LogOut</p>
+            </Link> : null
+            }
             <Link to="/">
               <h1
                 className="title-my"
