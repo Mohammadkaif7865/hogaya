@@ -8,7 +8,7 @@ class Login extends Component {
         super(props)
 
         this.state={
-            email:'nidhi@gmail.com',
+            email:'',
             password:'12345678',
             message:''
         }
@@ -32,8 +32,8 @@ class Login extends Component {
             if(data.auth === false){
                 this.setState({message:data.token})
             }else{
-                sessionStorage.setItem('ltk',data.token)
-                this.props.history.push('/')
+                sessionStorage.setItem('x-access-token',data.token)
+                this.props.history.push('/userInfo')
             }
         })
     }

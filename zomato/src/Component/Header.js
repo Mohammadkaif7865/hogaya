@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "../App.css";
-export default function Header() {
+export default function Header(props) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -53,7 +53,9 @@ export default function Header() {
               <p>sign up</p>
             </Link>
             <Link to="/login" className="n-u-i">
-              <p>log in</p>
+              {
+                props.name ? <p>Hi {props.name}</p> : <p>log in</p>
+              }
             </Link>
             <Link to="/" className="n-u-i">
               <p>Add restaurant</p>
