@@ -31,7 +31,7 @@ export default function Footer() {
           style={{ display: visible ? "inline" : "none" }}
         >
           <h3>
-            <i className="bi bi-chevron-up" onClick={scrollToTop}></i>
+            <i className="bi bi-chevron-up" onClick={scrollToTop} style={{ position:"relative", top:"-16px"}}></i>
           </h3>
         </div>
 
