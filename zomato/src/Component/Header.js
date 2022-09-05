@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "../App.css";
-export default function Header(props) {
+ function Header(props) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -64,7 +64,7 @@ export default function Header(props) {
               }
             </Link>
             {
-              props.name ? <Link to="/userInfo" className="n-u-i">
+              props.name ? <Link to="/" className="n-u-i" onClick={logout}>
               <p>LogOut</p>
             </Link> : null
             }
@@ -86,3 +86,4 @@ export default function Header(props) {
     </>
   );
 }
+export default withRouter(Header);

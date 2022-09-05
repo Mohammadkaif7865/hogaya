@@ -17,7 +17,7 @@ function App() {
   console.log(name);
   return (
     <BrowserRouter>
-      <Header name={name} />
+      <Header name={name} setName={(data) => setName(data)} />
 
       <Switch>
         <Route exact path="/" component={Home} />
