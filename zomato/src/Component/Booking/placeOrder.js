@@ -12,10 +12,10 @@ class PlaceOrder extends Component {
         this.state = {
             id: Math.floor(Math.random() * 100000),
             hotel_name: this.props.match.params.restName,
-            name: sessionStorage.getItem('userinfo') ? sessionStorage.getItem('userinfo').split(',')[0] : '',
-            email: sessionStorage.getItem('userinfo') ? sessionStorage.getItem('userinfo').split(',')[1] : '',
+            name: sessionStorage.getItem('name') ? sessionStorage.getItem('name') : '',
+            email: sessionStorage.getItem('email') ? sessionStorage.getItem('email') : '',
             cost: 0,
-            phone: sessionStorage.getItem('userinfo') ? sessionStorage.getItem('userinfo').split(',')[2] : '',
+            phone: sessionStorage.getItem('phone') ? sessionStorage.getItem('phone') : '',
             address: 'Hno 28',
             menuItem: ''
         }

@@ -15,13 +15,15 @@ function UserInfo(props) {
                 .then((data) => {
                     setUser(data);
                     sessionStorage.setItem('name', data.name);
+                    sessionStorage.setItem('email', data.email);
+                    sessionStorage.setItem('phone', data.phone);
                     props.setName(data.name);
                 });
         }
         else {
             console.log('Invalid token');
         }
-    })
+    },[])
 
 
     return (
