@@ -50,11 +50,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif !important;
 }
 
 #header-index {
-  background-image: url('https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png');
+  background-image: url("https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png");
   height: 500px;
   background-size: cover;
   color: white;
@@ -395,13 +395,11 @@ footer a {
   overflow-y: hidden;
 }
 
-
 /* width */
 
 .filter-my::-webkit-scrollbar {
   display: none;
 }
-
 
 /* Track */
 
@@ -409,16 +407,13 @@ footer a {
   background: rgb(211, 129, 129);
 }
 
-
 /* Handle */
 
 .filter-my::-webkit-scrollbar-thumb {
   background: rgb(0, 0, 0);
 }
 
-
 /* Handle on hover */
-
 
 /* .filter-my::-webkit-scrollbar-thumb:hover {
   background: #555;
@@ -522,7 +517,6 @@ footer a {
   width: 100%;
   height: 100%;
 }
-
 
 /* Listing page css*/
 
@@ -662,7 +656,6 @@ footer a {
   border-bottom-left-radius: 5px;
 }
 
-
 /*Modal css*/
 
 .modal-flex-body {
@@ -689,12 +682,11 @@ footer a {
   color: black;
 }
 
-
 /* Details page */
 
 .restaurant-image {
   display: grid;
-  grid-template-areas: 'pic1 pic1 pic1 pic2 pic3 ' 'pic1 pic1 pic1 pic4 no-pic';
+  grid-template-areas: "pic1 pic1 pic1 pic2 pic3 " "pic1 pic1 pic1 pic4 no-pic";
   max-width: 1100px;
   width: 100%;
   gap: 5px;
@@ -715,7 +707,8 @@ footer a {
   opacity: 1.23;
   filter: brightness(1.1);
   transform: scale(1.1);
-  transition: transform 0.4s ease-in-out 0s, opacity 1.63s ease 0s, filter 0.4s ease 0s;
+  transition: transform 0.4s ease-in-out 0s, opacity 1.63s ease 0s,
+    filter 0.4s ease 0s;
 }
 
 .pic1 {
@@ -944,67 +937,67 @@ footer a {
   height: 50px;
 }
 #my-nav-bar {
- cursor: pointer;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 769px) {
   #my-nav-bar {
-      display: none;
+    display: none;
   }
   .title-my {
-      display: none;
+    display: none;
   }
 }
 
 @media screen and (max-width: 769px) {
   .n-u-i {
-      display: none;
+    display: none;
   }
   #get-the-app {
-      display: none;
+    display: none;
   }
   .title-my-2 {
-      display: none;
+    display: none;
   }
   .p-i-to-2 {
-      width: 48%;
+    width: 48%;
   }
 }
 
 @media screen and (max-width: 600px) {
   .p-i-to {
-      width: 48%;
+    width: 48%;
   }
   .restaurant-image {
-      grid-template-areas: 'pic1 pic1 pic1 pic2' 'pic1 pic1 pic1 pic4' 'pic3 pic3 no-pic no-pic';
+    grid-template-areas: "pic1 pic1 pic1 pic2" "pic1 pic1 pic1 pic4" "pic3 pic3 no-pic no-pic";
   }
   .cat {
-      display: none;
+    display: none;
   }
   .rest-nav {
-      font-size: 15px;
+    font-size: 15px;
   }
   .rest-item-card {
-      font-size: 12px;
+    font-size: 12px;
   }
   .food-all {
-      width: 100%;
+    width: 100%;
   }
   .image-section-left {
-      width: 125px;
-      height: 125px;
+    width: 125px;
+    height: 125px;
   }
   .make-it-on {
-      font-size: 20px;
+    font-size: 20px;
   }
   .user-and-restaurant {
-      font-size: 5px;
+    font-size: 5px;
   }
 }
 
 @media screen and (max-width: 500px) {
   .p-i-to-2 {
-      width: 98%;
+    width: 98%;
   }
 }
 
