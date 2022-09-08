@@ -48,7 +48,7 @@ class ViewOrder extends Component {
                 }
                 let id = queryp.split('&')[1].split('=')[1].split('_')[1];
                 // console.log(">>>", `${updateUrl}/${id}`)
-                // console.log(data)
+                console.log(data);
                 fetch(`${updateUrl}/${id}`, {
                     method: 'PUT',
                     headers: {
@@ -56,7 +56,8 @@ class ViewOrder extends Component {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(data)
-                })
+                }).then((res)=> res.json())
+                .then((data)=> console.log(data))
             }
         }
         //let email = sessionStorage.getItem('userinfo')

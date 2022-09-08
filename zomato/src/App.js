@@ -13,8 +13,7 @@ import UserInfo from "./Component/login/userInfo";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import React, { useState } from "react";
 function App() {
-  const [name, setName] = useState("");
-  console.log(name);
+  const [name, setName] = useState(sessionStorage.getItem('name') ? sessionStorage.getItem('name') : "");
   return (
     <BrowserRouter>
       <Header name={name} setName={(data) => setName(data)} />
