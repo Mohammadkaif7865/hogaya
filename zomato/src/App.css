@@ -58,6 +58,8 @@ h6 {
   height: 500px;
   background-size: cover;
   color: white;
+  z-index: 3;
+  position: relative;
 }
 
 .font-mid {
@@ -66,7 +68,12 @@ h6 {
 
 #header-list {
   width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
   border-bottom: 2px solid rgb(239, 234, 234);
+  background-color: white;
 }
 
 #header-list a {
@@ -174,7 +181,7 @@ a {
 }
 
 .p-i-to {
-  width: 23%;
+  width: 32%;
   height: 250px;
   margin: 2px;
   display: inline-block;
@@ -962,11 +969,14 @@ footer a {
   .p-i-to-2 {
     width: 48%;
   }
+  .p-i-to {
+    width: 48%;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .p-i-to {
-    width: 48%;
+    width: 100%;
   }
   .restaurant-image {
     grid-template-areas: "pic1 pic1 pic1 pic2" "pic1 pic1 pic1 pic4" "pic3 pic3 no-pic no-pic";

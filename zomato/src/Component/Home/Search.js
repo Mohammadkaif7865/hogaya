@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Search.css";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
+import "../../App.css";
+import "../offcanvas.css";
 
 const url = "https://restaurantmysite.herokuapp.com/location";
 const restUrl = "https://restaurantmysite.herokuapp.com/restaurants";
@@ -12,7 +14,18 @@ class Search extends Component {
     this.state = {
       location: "",
       restaurants: "",
+      show: false
     };
+  }
+
+
+
+  handleClose = () => this.setState({ show: false });
+  handleShow = () => this.setState({ show: true });
+  logout = () => {
+    sessionStorage.clear();
+    this.props.setName("");
+    this.props.history.push("/");
   }
 
   renderCity = (data) => {
@@ -58,27 +71,132 @@ class Search extends Component {
   render() {
     return (
       <>
-        <div id="search">
-          <div id="logo">
-            <span>E!</span>
+        <div id="mySidenav" className="sidenav" style={{ display: this.show }}>
+          <span to="/" className="closebtn" onClick={this.handleClose} >&times;</span>
+          {
+            !this.props.name ? <Link to="/register" className="n-u-i" onClick={this.handleClose}>
+              <p>sign up</p>
+            </Link> : null
+          }
+          <Link to={this.props.name ? "/userInfo" : "/login"} className="n-u-i" onClick={this.handleClose}>
+            {
+              this.props.name ? <p>Hi {this.props.name}</p> : <p>log in</p>
+            }
+          </Link>
+          {
+            this.props.name ? <Link to="/" className="n-u-i" onClick={() => { this.logout(); this.handleClose(); }}>
+              <p>LogOut</p>
+            </Link> : null
+          }
+          {
+            this.props.name ? <Link to="/viewBooking" className="n-u-i" onClick={this.handleClose}>
+              <p>Orders / Cart</p>
+            </Link> : null
+          }
+        </div>
+        <div id="header-index">
+          <div id="header-list">
+            <div className="navbar-mine">
+              <div className="left-list-nav">
+                <h1 id="my-nav-bar" onClick={this.handleShow}>
+                  <i
+                    className="fa fa-bars"
+                    aria-hidden="true"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#demo"
+                  ></i>
+                </h1>
+                <Link to="/" className="title-my-2">
+                  <h1
+                    style={{
+                      fontSize: "calc(30px + 1vw)",
+                      fontStyle: "italic",
+                      textAlign: "center",
+                    }}
+                  >
+                    Zomato
+                  </h1>
+                </Link>
+              </div>
+              <div className="right-list-nav font-mid">
+                {
+                  !this.props.name ? <Link to="/register" className="n-u-i">
+                    <p>sign up</p>
+                  </Link> : null
+                }
+                <Link to={this.props.name ? "/userInfo" : "/login"} className="n-u-i">
+                  {
+                    this.props.name ? <p>Hi {this.props.name}</p> : <p>log in</p>
+                  }
+                </Link>
+                {
+                  this.props.name ? <Link to="/" className="n-u-i" onClick={this.logout}>
+                    <p>LogOut</p>
+                  </Link> : null
+                }
+                {
+                  this.props.name ? <Link to="/viewBooking" className="n-u-i">
+                    <p>Orders / Cart</p>
+                  </Link> : null
+                }
+                <Link to="/">
+                  <h1
+                    className="title-my"
+                    style={{
+                      fontSize: "calc(30px + 1vw)",
+                      fontStyle: "italic",
+                      textAlign: "center",
+                    }}
+                  >
+                    Zomato
+                  </h1>
+                </Link>
+              </div>
+            </div>
           </div>
-          <div id="heading">Find The Best Restaurants Near You</div>
-          <div className="dropdown">
-            <select onChange={this.handleCity}>
-              <option>----SELECT YOUR CITY-----</option>
-              {this.renderCity(this.state.location)}
-            </select>
-            <select className="restSelect" onChange={this.handleRest}>
-              <option>----SELECT YOUR Restaurants-----</option>
-              {this.renderRest(this.state.restaurants)}
-            </select>
+
+
+          <div className="confined">
+            <div className="instr-w-w">
+              <h1 style={{ fontSize: "calc(70px + 3vw)", fontStyle: "italic" }}>Zomato</h1>
+              <p className="font-mid">Find the best restaurant near you</p>
+            </div>
+            <div className="search">
+              <form action="nav.js">
+                <div className="search-loc-logo">
+                  <i className="bi bi-geo-alt-fill"></i>
+                </div>
+                <select name="city" id="city">
+                  <option value="Delhi">
+                    location
+                  </option>
+                  <option value="Delhi">
+                    Mumbai
+                  </option>
+                  <option value="Delhi">
+                    Kolkata
+                  </option>
+                  <option value="Delhi">
+                    Bangaluru
+                  </option>
+                </select>
+                <input type="text" placeholder="Restaurant name" id="place" autoComplete="off" />
+                <button type="submit" id="search">
+                  <i className="bi bi-search" style={{ fontSize: "30px", color: "rgb(240, 1, 1)" }}></i>
+                </button>
+              </form>
+            </div>
           </div>
+
+
+
         </div>
       </>
     );
   }
 
-  // api calling on page load
+  // divpi calling on page load
   componentDidMount() {
     fetch(url, { method: "GET" })
       .then((res) => res.json())

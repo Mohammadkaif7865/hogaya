@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Search from "./Search";
 import QuickSearch from "./QuickSearch";
+import "../../App.css";
 const Home = (props) => {
   const scrollToTop = () => {
     window.scrollTo({
