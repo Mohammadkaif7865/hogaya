@@ -38,16 +38,18 @@ class ViewOrder extends Component {
 
     //api Call 
     componentDidMount() {
-        if (this.props.location) {
+        if (this.props.location.search) {
             let queryp = this.props.location.search;
             let bank_name = '';
             queryp.split('&')[3].split('=')[1].split("%20").map((data) =>
                 bank_name = bank_name + data
             )
+            let date = '';
+            queryp.split('&')[2].split('=')[1].split("%20").map((data) => date = date+ " " + data)
             if (queryp) {
                 let data = {
                     "status": queryp.split('&')[0].split('=')[1],
-                    "date": queryp.split('&')[2].split('=')[1],
+                    "date": date,
                     "bank_name": bank_name,
                 }
                 let id = queryp.split('&')[1].split('=')[1].split('_')[1];
@@ -61,9 +63,7 @@ class ViewOrder extends Component {
                 })
             }
         }
-        //let email = sessionStorage.getItem('userinfo')
-        // console.log(">>>>", sessionStorage.getItem('userinfo'))
-        //console.log(`${url}?email=${email}`)
+        // ! onw sec delay beacuse of api ping
         setTimeout(() => {
             axios.get(`${url}?email=${sessionStorage.getItem('email')}`).then((res) => { this.setState({ orders: res.data }) })
         }, 1000);

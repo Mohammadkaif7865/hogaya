@@ -27,8 +27,13 @@ function Header(props) {
           }
         </Link>
         {
-          props.name ? <Link to="/" className="n-u-i" onClick={()=>{logout();handleClose();}}>
+          props.name ? <Link to="/" className="n-u-i" onClick={() => { logout(); handleClose(); }}>
             <p>LogOut</p>
+          </Link> : null
+        }
+        {
+          props.name ? <Link to="/viewBooking" className="n-u-i" onClick={handleClose}>
+            <p>Orders / Cart</p>
           </Link> : null
         }
       </div>
@@ -70,6 +75,11 @@ function Header(props) {
             {
               props.name ? <Link to="/" className="n-u-i" onClick={logout}>
                 <p>LogOut</p>
+              </Link> : null
+            }
+            {
+              props.name ? <Link to="/viewBooking" className="n-u-i">
+                <p>Orders / Cart</p>
               </Link> : null
             }
             <Link to="/">
