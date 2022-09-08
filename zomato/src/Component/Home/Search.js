@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./Search.css";
 import { withRouter, Link } from "react-router-dom";
 import "../../App.css";
 import "../offcanvas.css";
@@ -14,14 +13,14 @@ class Search extends Component {
     this.state = {
       location: "",
       restaurants: "",
-      show: false
+      show: "none"
     };
   }
 
 
 
-  handleClose = () => this.setState({ show: false });
-  handleShow = () => this.setState({ show: true });
+  handleClose = () => this.setState({ show: "none" });
+  handleShow = () => this.setState({ show: "block" });
   logout = () => {
     sessionStorage.clear();
     this.props.setName("");
@@ -68,10 +67,12 @@ class Search extends Component {
     this.props.history.push(`/details?restId=${restId}`);
   };
 
+
   render() {
+    console.log(this.state.show);
     return (
       <>
-        <div id="mySidenav" className="sidenav" style={{ display: this.show }}>
+        <div id="mySidenav" className="sidenav" style={{ display: this.state.show }}>
           <span to="/" className="closebtn" onClick={this.handleClose} >&times;</span>
           {
             !this.props.name ? <Link to="/register" className="n-u-i" onClick={this.handleClose}>
@@ -95,7 +96,7 @@ class Search extends Component {
           }
         </div>
         <div id="header-index">
-          <div id="header-list">
+          <div id="header-list-2">
             <div className="navbar-mine">
               <div className="left-list-nav">
                 <h1 id="my-nav-bar" onClick={this.handleShow}>

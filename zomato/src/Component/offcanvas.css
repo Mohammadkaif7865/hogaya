@@ -3,7 +3,7 @@
     height: 100%; /* 100% Full-height */
     width: calc(30% + 300px); /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    z-index: 5; /* Stay on top */
     top: 0;
     left: 0;
     background-color: white; /* Black*/
@@ -37,6 +37,7 @@
     margin-left: 50px;
   }
   
+ 
   /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
   #main {
     transition: margin-left .5s;
