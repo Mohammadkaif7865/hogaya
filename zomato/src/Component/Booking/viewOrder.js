@@ -40,15 +40,17 @@ class ViewOrder extends Component {
     componentDidMount() {
         if (this.props.location) {
             let queryp = this.props.location.search;
+            let bank_name = '';
+            queryp.split('&')[3].split('=')[1].split("%20").map((data) =>
+                bank_name = bank_name + data
+            )
             if (queryp) {
                 let data = {
                     "status": queryp.split('&')[0].split('=')[1],
                     "date": queryp.split('&')[2].split('=')[1],
-                    "bank_name": queryp.split('&')[3].split('=')[1]
+                    "bank_name": bank_name,
                 }
                 let id = queryp.split('&')[1].split('=')[1].split('_')[1];
-                // console.log(">>>", `${updateUrl}/${id}`)
-                console.log(data);
                 fetch(`${updateUrl}/${id}`, {
                     method: 'PUT',
                     headers: {
@@ -56,8 +58,7 @@ class ViewOrder extends Component {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(data)
-                }).then((res)=> res.json())
-                .then((data)=> console.log(data))
+                })
             }
         }
         //let email = sessionStorage.getItem('userinfo')
