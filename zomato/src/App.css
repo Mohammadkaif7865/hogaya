@@ -58,7 +58,7 @@ h6 {
   height: 500px;
   background-size: cover;
   color: white;
-  z-index: 6;
+  z-index: 3;
   position: relative;
 }
 
@@ -68,7 +68,7 @@ h6 {
 
 #header-list {
   width: 100%;
-  position: fixed;
+  position: sticky;
   z-index: 2;
   top: 0;
   left: 0;

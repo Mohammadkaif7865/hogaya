@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
 import Search from "./Search";
+import "./Home.css";
 import QuickSearch from "./QuickSearch";
 import "../../App.css";
+import { useState } from "react";
 const Home = (props) => {
+  let [name, setName] = useState(props.name);
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -14,10 +17,13 @@ const Home = (props) => {
   useEffect(() => {
     scrollToTop();
   }, []);
+  console.log(name);
   return (
     <>
-      <Search />
-      <QuickSearch />
+      <div className="handleHome">
+        <Search name={props.name}  setName={(data)=> setName(data)}/>
+        <QuickSearch />
+      </div>
     </>
   );
 };

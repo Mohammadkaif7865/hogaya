@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
+import "./Search.css"
 import "../../App.css";
 import "../offcanvas.css";
 
@@ -13,7 +14,8 @@ class Search extends Component {
     this.state = {
       location: "",
       restaurants: "",
-      show: "none"
+      show: "none",
+      name: this.props.name ? props.name : ""
     };
   }
 
@@ -69,28 +71,28 @@ class Search extends Component {
 
 
   render() {
-    console.log(this.state.show);
+    console.log(this.props);
     return (
       <>
         <div id="mySidenav" className="sidenav" style={{ display: this.state.show }}>
           <span to="/" className="closebtn" onClick={this.handleClose} >&times;</span>
           {
-            !this.props.name ? <Link to="/register" className="n-u-i" onClick={this.handleClose}>
+            !this.state.name ? <Link to="/register" className="n-u-i" onClick={this.handleClose}>
               <p>sign up</p>
             </Link> : null
           }
-          <Link to={this.props.name ? "/userInfo" : "/login"} className="n-u-i" onClick={this.handleClose}>
+          <Link to={this.state.name ? "/userInfo" : "/login"} className="n-u-i" onClick={this.handleClose}>
             {
-              this.props.name ? <p>Hi {this.props.name}</p> : <p>log in</p>
+              this.state.name ? <p>Hi {this.state.name}</p> : <p>log in</p>
             }
           </Link>
           {
-            this.props.name ? <Link to="/" className="n-u-i" onClick={() => { this.logout(); this.handleClose(); }}>
+            this.state.name ? <Link to="/" className="n-u-i" onClick={() => { this.logout(); this.handleClose(); }}>
               <p>LogOut</p>
             </Link> : null
           }
           {
-            this.props.name ? <Link to="/viewBooking" className="n-u-i" onClick={this.handleClose}>
+            this.state.name ? <Link to="/viewBooking" className="n-u-i" onClick={this.handleClose}>
               <p>Orders / Cart</p>
             </Link> : null
           }
@@ -122,22 +124,22 @@ class Search extends Component {
               </div>
               <div className="right-list-nav font-mid">
                 {
-                  !this.props.name ? <Link to="/register" className="n-u-i">
+                  !this.state.name ? <Link to="/register" className="n-u-i">
                     <p>sign up</p>
                   </Link> : null
                 }
-                <Link to={this.props.name ? "/userInfo" : "/login"} className="n-u-i">
+                <Link to={this.state.name ? "/userInfo" : "/login"} className="n-u-i">
                   {
-                    this.props.name ? <p>Hi {this.props.name}</p> : <p>log in</p>
+                    this.state.name ? <p>Hi {this.state.name}</p> : <p>log in</p>
                   }
                 </Link>
                 {
-                  this.props.name ? <Link to="/" className="n-u-i" onClick={this.logout}>
+                  this.state.name ? <Link to="/" className="n-u-i" onClick={this.logout}>
                     <p>LogOut</p>
                   </Link> : null
                 }
                 {
-                  this.props.name ? <Link to="/viewBooking" className="n-u-i">
+                  this.state.name ? <Link to="/viewBooking" className="n-u-i">
                     <p>Orders / Cart</p>
                   </Link> : null
                 }
