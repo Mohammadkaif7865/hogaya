@@ -4,70 +4,39 @@
 #header-list-2 a {
   color: white;
 }
-#logo {
-  height: 150px;
-  width: 150px;
-  background-color: rgb(240 229 229/ 60%);
-  border-radius: 50%;
-  margin-left: 43%;
-  margin-top: 2%;
-  position: absolute;
-  animation: revolve 20s infinite;
+.navbar-mine-2 {
+  display: flex;
+  padding: 40px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.left-list-nav-2 {
+  display: flex;
+  width: 50%;
+  justify-content: left;
+  align-items: center;
+}
+.right-list-nav-2 {
+  display: flex;
+  width: 50%;
+  justify-content: right;
 }
 
-@keyframes revolve {
-  0% {
-    transform: rotate(30deg);
-    margin-left: 2%;
-  }
-  25% {
-    transform: rotate(90deg);
-    margin-left: 20%;
-  }
-  50% {
-    transform: rotate(180deg);
-    margin-left: 40%;
-  }
-  75% {
-    transform: rotate(270deg);
-    margin-left: 80%;
-  }
-  100% {
-    transform: rotate(360deg);
-    margin-left: 40%;
-  }
+.right-list-nav-2 p {
+  margin-left: 2vw;
+}
+.left-list-nav-2 h1 {
+  margin-right: 2vw;
 }
 
-#logo > span {
-  margin-left: 28%;
-  margin-top: 16%;
-  position: absolute;
-  font-size: 80px;
+.font-mid-2 {
+  font-size: 20px;
 }
-
-#heading {
-  margin-left: 25%;
-  margin-top: 14%;
-  position: absolute;
-  font-size: 50px;
+#header-list-2 a {
   color: white;
 }
 
-.dropdown {
-  height: 60px;
-  width: 60%;
-  margin-left: 23%;
-  margin-top: 20%;
-  position: absolute;
-}
-
-select {
-  height: 60px;
-  width: 40%;
-  font-size: 20px;
-  text-align: center;
-}
-
-.restSelect {
-  width: 55%;
+#header-list-2 a:hover {
+  color: rgb(174, 158, 158);
 }

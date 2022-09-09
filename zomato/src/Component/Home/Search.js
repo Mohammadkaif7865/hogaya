@@ -15,6 +15,7 @@ class Search extends Component {
       location: "",
       restaurants: "",
       show: "none",
+      index: 3,
       name: this.props.name ? props.name : ""
     };
   }
@@ -41,6 +42,16 @@ class Search extends Component {
       });
     }
   };
+  doSomething = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 120) {
+      this.setState({ index: 0 });
+    } else if (scrolled <= 120) {
+      this.setState({ index: 3 });
+    }
+  };
+
+
 
   renderRest = (data) => {
     if (data) {
@@ -71,7 +82,6 @@ class Search extends Component {
 
 
   render() {
-    console.log(this.props);
     return (
       <>
         <div id="mySidenav" className="sidenav" style={{ display: this.state.show }}>
@@ -97,10 +107,10 @@ class Search extends Component {
             </Link> : null
           }
         </div>
-        <div id="header-index">
+        <div id="header-index" style={{ zIndex: this.state.index }}>
           <div id="header-list-2">
-            <div className="navbar-mine">
-              <div className="left-list-nav">
+            <div className="navbar-mine-2">
+              <div className="left-list-nav-2">
                 <h1 id="my-nav-bar" onClick={this.handleShow}>
                   <i
                     className="fa fa-bars"
@@ -122,7 +132,7 @@ class Search extends Component {
                   </h1>
                 </Link>
               </div>
-              <div className="right-list-nav font-mid">
+              <div className="right-list-nav-2 font-mid-2">
                 {
                   !this.state.name ? <Link to="/register" className="n-u-i">
                     <p>sign up</p>
@@ -166,29 +176,24 @@ class Search extends Component {
               <p className="font-mid">Find the best restaurant near you</p>
             </div>
             <div className="search">
-              <form action="nav.js">
-                <div className="search-loc-logo">
-                  <i className="bi bi-geo-alt-fill"></i>
-                </div>
-                <select name="city" id="city">
-                  <option value="Delhi">
-                    location
-                  </option>
-                  <option value="Delhi">
-                    Mumbai
-                  </option>
-                  <option value="Delhi">
-                    Kolkata
-                  </option>
-                  <option value="Delhi">
-                    Bangaluru
-                  </option>
-                </select>
-                <input type="text" placeholder="Restaurant name" id="place" autoComplete="off" />
-                <button type="submit" id="search">
-                  <i className="bi bi-search" style={{ fontSize: "30px", color: "rgb(240, 1, 1)" }}></i>
-                </button>
-              </form>
+
+              <div className="search-loc-logo">
+                <i className="bi bi-geo-alt-fill"></i>
+              </div>
+
+
+              <select onChange={this.handleCity} id="city">
+                <option>----SELECT YOUR CITY-----</option>
+                {this.renderCity(this.state.location)}
+              </select>
+              <select className="restSelect" onChange={this.handleRest} id="place">
+                <option>----SELECT YOUR Restaurants-----</option>
+                {this.renderRest(this.state.restaurants)}
+              </select>
+
+              <button id="search">
+                <i className="bi bi-search" style={{ fontSize: "30px", color: "rgb(240, 1, 1)" }}></i>
+              </button>
             </div>
           </div>
 
@@ -206,6 +211,7 @@ class Search extends Component {
       .then((data) => {
         this.setState({ location: data });
       });
+    window.addEventListener('scroll', this.doSomething)
   }
 }
 

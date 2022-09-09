@@ -19,7 +19,7 @@ function App() {
       <Header name={name} setName={(data) => setName(data)} />
 
       <Switch>
-        <Route exact path="/" > <Home name={name}  setName={(data) => setName(data)}/></Route>
+        <Route exact path="/" > <Home name={name} setName={(data) => setName(data)} /></Route>
         <Route path="/listing/:id" component={Listing} />
         <Route path="/details" component={Detail} />
         <Route path="/login" component={Login} />
