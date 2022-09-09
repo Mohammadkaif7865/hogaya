@@ -131,7 +131,7 @@ a {
   color: red;
 }
 
-.search input {
+#place {
   height: 50px;
   background-color: white;
   float: center;
