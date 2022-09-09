@@ -136,7 +136,8 @@ a {
   background-color: white;
   float: center;
   border: 2px solid white;
-  width: 60%;
+  width: 55%;
+  text-align: center;
   padding: 10px;
 }
 
@@ -144,7 +145,7 @@ a {
   background-color: white;
   height: 50px;
   float: left;
-  width: 25%;
+  width: 30%;
   border: 2px solid white;
   border-right: 2px solid rgb(221, 215, 215);
   padding: 10px;
