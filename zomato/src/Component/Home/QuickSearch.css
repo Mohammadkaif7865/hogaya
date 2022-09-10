@@ -1,17 +1,16 @@
-
-#quickHeading{
-     font-size:40px;
-     color:black;
-     display:block;
-     font-weight:bold;
-     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     margin-left: 3%;
+#quickHeading {
+  font-size: calc(30px + 0.75vw);
+  color: rgb(50, 47, 47);
+  display: block;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 3%;
 }
 
-#quickSubHeading{
-    font-size:20px;
-    color:gray;
-    display:block;
-    line-height: 3;
-    margin-left: 3%;
+#quickSubHeading {
+  font-size: calc(20px + 0.6vw);
+  color: gray;
+  display: block;
+  line-height: 3;
+  margin-left: 3%;
 }

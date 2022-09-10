@@ -6,7 +6,7 @@
 }
 .navbar-mine-2 {
   display: flex;
-  padding: 40px;
+  padding: 65px;
   width: 100%;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +41,7 @@
   color: rgb(174, 158, 158);
 }
 .zomato-title {
-  font-size: calc(60px + 3vw);
+  font-size: calc(50px + 1vw);
   font-style: italic;
   animation: fadeInAnimationHead ease 3s;
   animation-iteration-count: 1;
