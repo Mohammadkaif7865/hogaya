@@ -24,7 +24,7 @@ const Home = (props) => {
   return (
     <>
       <div className="handleHome">
-        <Search name={name} getName={(data) => setName(data)} />
+        <Search name={props.name} getName={(data) => setName(data)} />
         <QuickSearch />
       </div>
     </>
