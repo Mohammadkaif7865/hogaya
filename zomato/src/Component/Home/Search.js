@@ -59,14 +59,6 @@ class Search extends Component {
     window.addEventListener('scroll', this.doSomething)
   }
 
-  shouldComponentUpdate(nextProps) {  
-    if (nextProps.name !== this.props.name) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
   renderRest = (data) => {
     if (data) {
       return data.map((item) => {
@@ -81,7 +73,6 @@ class Search extends Component {
 
   handleCity = (event) => {
     let stateId = event.target.value;
-    console.log(stateId);
     fetch(`${restUrl}?stateId=${stateId}`, { method: "GET" })
       .then((res) => res.json())
       .then((data) => {
@@ -96,7 +87,6 @@ class Search extends Component {
 
 
   render() {
-   console.log(this.props.name+" search");
     return (
       <>
         <div id="mySidenav" className="sidenav" style={{ display: this.state.show }}>
