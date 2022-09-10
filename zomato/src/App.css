@@ -61,6 +61,21 @@ h6 {
   z-index: 3;
   position: relative;
 }
+.blur-Effect{
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  height: 500px;
+
+}
+@keyframes fadeInAnimation {
+  0%{
+    backdrop-filter: blur(14px);
+  }
+  100%{
+    backdrop-filter: blur(0px);
+  }
+}
 
 .font-mid {
   font-size: 20px;
@@ -183,6 +198,7 @@ a {
 
 .p-i-to:hover {
   transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
 }
 
 .p-i-to img {

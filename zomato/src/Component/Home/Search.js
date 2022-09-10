@@ -113,7 +113,8 @@ class Search extends Component {
           }
         </div>
         <div id="header-index" style={{ zIndex: this.state.index }}>
-          <div id="header-list-2">
+        <div className="blur-Effect">
+        <div  id="header-list-2">
             <div className="navbar-mine-2">
               <div className="left-list-nav-2">
                 <h1 id="my-nav-bar" onClick={this.handleShow}>
@@ -125,16 +126,8 @@ class Search extends Component {
                     data-bs-target="#demo"
                   ></i>
                 </h1>
-                <Link to="/" className="title-my-2">
-                  <h1
-                    style={{
-                      fontSize: "calc(30px + 1vw)",
-                      fontStyle: "italic",
-                      textAlign: "center",
-                    }}
-                  >
-                    Zomato
-                  </h1>
+                <Link to="/" className="title-my-2 font-mid-2">
+                  <i className="bi bi-download"></i> get the app
                 </Link>
               </div>
               <div className="right-list-nav-2 font-mid-2">
@@ -177,7 +170,7 @@ class Search extends Component {
 
           <div className="confined">
             <div className="instr-w-w">
-              <h1 style={{ fontSize: "calc(70px + 3vw)", fontStyle: "italic" }}>Zomato</h1>
+              <h1 className="zomato-title">Zomato</h1>
               <p className="font-mid">Find the best restaurant near you</p>
             </div>
             <div className="search">
@@ -202,6 +195,7 @@ class Search extends Component {
             </div>
           </div>
 
+        </div>
 
 
         </div>

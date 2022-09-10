@@ -40,3 +40,20 @@
 #header-list-2 a:hover {
   color: rgb(174, 158, 158);
 }
+.zomato-title {
+  font-size: calc(60px + 3vw);
+  font-style: italic;
+  animation: fadeInAnimationHead ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimationHead {
+  0% {
+    filter: blur(14px);
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+}
