@@ -59,7 +59,13 @@ class Search extends Component {
     window.addEventListener('scroll', this.doSomething)
   }
 
-
+  shouldComponentUpdate(nextProps) {  
+    if (nextProps.name !== this.props.name) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   renderRest = (data) => {
     if (data) {
