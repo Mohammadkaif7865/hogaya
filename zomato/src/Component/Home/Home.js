@@ -16,12 +16,15 @@ const Home = (props) => {
   };
   useEffect(() => {
     scrollToTop();
+
   }, []);
-  console.log(name);
+  useEffect(() => {
+    props.setName(name);
+  }, [name]);
   return (
     <>
       <div className="handleHome">
-        <Search name={props.name}  getName={(data)=> setName(data)}/>
+        <Search name={name} getName={(data) => setName(data)} />
         <QuickSearch />
       </div>
     </>

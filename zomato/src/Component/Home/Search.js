@@ -16,7 +16,6 @@ class Search extends Component {
       restaurants: "",
       show: "none",
       index: 3,
-      name: this.props.name ? props.name : ""
     };
   }
 
@@ -26,7 +25,7 @@ class Search extends Component {
   handleShow = () => this.setState({ show: "block" });
   logout = () => {
     sessionStorage.clear();
-    this.props.setName("");
+    this.props.getName("");
     this.props.history.push("/");
   }
 
@@ -44,12 +43,21 @@ class Search extends Component {
   };
   doSomething = () => {
     const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 120) {
+    if (scrolled > 120 && this.state.index > 0) {
       this.setState({ index: 0 });
-    } else if (scrolled <= 120) {
+    } else if (scrolled <= 120 && this.state.index === 0) {
       this.setState({ index: 3 });
     }
   };
+  // divpi calling on page load
+  componentDidMount() {
+    fetch(url, { method: "GET" })
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({ location: data });
+      });
+    window.addEventListener('scroll', this.doSomething)
+  }
 
 
 
@@ -82,27 +90,28 @@ class Search extends Component {
 
 
   render() {
+   console.log(this.props.name+" search");
     return (
       <>
         <div id="mySidenav" className="sidenav" style={{ display: this.state.show }}>
           <span to="/" className="closebtn" onClick={this.handleClose} >&times;</span>
           {
-            !this.state.name ? <Link to="/register" className="n-u-i" onClick={this.handleClose}>
+            !this.props.name ? <Link to="/register" className="n-u-i" onClick={this.handleClose}>
               <p>sign up</p>
             </Link> : null
           }
-          <Link to={this.state.name ? "/userInfo" : "/login"} className="n-u-i" onClick={this.handleClose}>
+          <Link to={this.props.name ? "/userInfo" : "/login"} className="n-u-i" onClick={this.handleClose}>
             {
-              this.state.name ? <p>Hi {this.state.name}</p> : <p>log in</p>
+              this.props.name ? <p>Hi {this.props.name}</p> : <p>log in</p>
             }
           </Link>
           {
-            this.state.name ? <Link to="/" className="n-u-i" onClick={() => { this.logout(); this.handleClose(); }}>
+            this.props.name ? <Link to="/" className="n-u-i" onClick={() => { this.logout(); this.handleClose(); }}>
               <p>LogOut</p>
             </Link> : null
           }
           {
-            this.state.name ? <Link to="/viewBooking" className="n-u-i" onClick={this.handleClose}>
+            this.props.name ? <Link to="/viewBooking" className="n-u-i" onClick={this.handleClose}>
               <p>Orders / Cart</p>
             </Link> : null
           }
@@ -134,22 +143,22 @@ class Search extends Component {
               </div>
               <div className="right-list-nav-2 font-mid-2">
                 {
-                  !this.state.name ? <Link to="/register" className="n-u-i">
+                  !this.props.name ? <Link to="/register" className="n-u-i">
                     <p>sign up</p>
                   </Link> : null
                 }
-                <Link to={this.state.name ? "/userInfo" : "/login"} className="n-u-i">
+                <Link to={this.props.name ? "/userInfo" : "/login"} className="n-u-i">
                   {
-                    this.state.name ? <p>Hi {this.state.name}</p> : <p>log in</p>
+                    this.props.name ? <p>Hi {this.props.name}</p> : <p>log in</p>
                   }
                 </Link>
                 {
-                  this.state.name ? <Link to="/" className="n-u-i" onClick={this.logout}>
+                  this.props.name ? <Link to="/" className="n-u-i" onClick={this.logout}>
                     <p>LogOut</p>
                   </Link> : null
                 }
                 {
-                  this.state.name ? <Link to="/viewBooking" className="n-u-i">
+                  this.props.name ? <Link to="/viewBooking" className="n-u-i">
                     <p>Orders / Cart</p>
                   </Link> : null
                 }
@@ -204,15 +213,6 @@ class Search extends Component {
     );
   }
 
-  // divpi calling on page load
-  componentDidMount() {
-    fetch(url, { method: "GET" })
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({ location: data });
-      });
-    window.addEventListener('scroll', this.doSomething)
-  }
 }
 
 export default withRouter(Search);
