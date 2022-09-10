@@ -12,9 +12,11 @@ const QuickDisplay = (props) => {
 
                         <div className="p-i-to">
                             <img src={item.meal_image} alt={item.mealtype} />
-                            <p>
-                                {item.mealtype}
-                            </p>
+                            <div style={{paddingTop: '10px'}}>
+                                <p className="text-qsh">    {item.mealtype}</p>
+                                {item.content}
+                            </div>
+
                         </div>
                     </Link>
                 )
