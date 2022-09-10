@@ -16,7 +16,7 @@ class QuickSearch extends Component {
   render() {
     return (
       <>
-        <div id="quickSearch">
+        <div className="container">
           <span id="quickHeading">Quick Search</span>
           <span id="quickSubHeading">Discover Restaurants By Meal</span>
           <QuickDisplay mealData={this.state.mealType} />
