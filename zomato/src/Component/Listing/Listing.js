@@ -34,7 +34,7 @@ class Listing extends Component {
       <>
         <div className="container">
 
-          {/* <div id="filter">
+          <div id="filter">
               <center>
                 <h3>Filters</h3>
               </center>
@@ -51,7 +51,7 @@ class Listing extends Component {
                   this.setDataPerFilter(data);
                 }}
               />
-            </div> */}
+            </div>
 
           <div className="path-to-2">
             <ListingDisplay listData={this.state.restaurants} />
