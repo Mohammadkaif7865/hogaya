@@ -12,8 +12,8 @@ const ListingDisplay = (props) => {
                 <span className="offer-mm">32% OFF</span>
                 <span className="offer-extra-mm">Pro extra 20% OFF</span>
                 <span className="dependable"><i className="bi bi-graph-up-arrow"> 12,323 delivery from here</i></span>
-                <span className="time-mm">14 min</span>
-                <span className="float-r rate-my adjust-rate">4.1 <i className="bi bi-star-fill g-g-old"></i></span>
+                <span className="time-mm">{item.average_time} min</span>
+                <span className="float-r rate-my adjust-rate">{item.average_rating} <i className="bi bi-star-fill g-g-old"></i></span>
                 <img src={item.restaurant_thumb} alt={item.restaurant_name} />
                 <div className="details-listing">
                   <h4>{item.restaurant_name}</h4>
