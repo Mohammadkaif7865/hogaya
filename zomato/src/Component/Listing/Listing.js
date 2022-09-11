@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./Listing.css";
+import "../../App.css";
 import ListingDisplay from "./ListingDisplay";
 import CuisineFilter from "../Filters/cuisineFilter";
 import CostFilter from "../Filters/costFilter";
@@ -27,13 +28,13 @@ class Listing extends Component {
                in place of 'smooth' */
     });
   };
- 
+
   render() {
     return (
       <>
-        <div className="row">
-          <div id="mainListing">
-            <div id="filter">
+        <div className="container">
+
+          {/* <div id="filter">
               <center>
                 <h3>Filters</h3>
               </center>
@@ -50,10 +51,13 @@ class Listing extends Component {
                   this.setDataPerFilter(data);
                 }}
               />
-            </div>
+            </div> */}
+
+          <div className="path-to-2">
             <ListingDisplay listData={this.state.restaurants} />
           </div>
         </div>
+
       </>
     );
   }
