@@ -62,7 +62,7 @@ class Listing extends Component {
         </div>
 
         <div className="container">
-          <div className="filter-my">
+          <div className="filter-my make-sticky">
             <div onClick={this.openbtn} className="filters" type="button"><i className="bi bi-funnel-fill"></i> Filter</div>
             <div className="filters" type="button"><i className="bi bi-arrow-down-up"></i> Delivery time</div>
             <div className="filters" type="button">Rating 4.0+</div>

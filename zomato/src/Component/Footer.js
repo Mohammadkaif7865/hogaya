@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
 
         <div className="we-deliver">
-          <h1>Cities We Deliver To</h1>
+          <h1 style={{fontSize:"calc(20px + 0.3vw)"}}>Cities We Deliver To</h1>
           <Link to="/">
             <div className="cities-m">Delhi</div>
           </Link>
