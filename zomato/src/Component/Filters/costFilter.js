@@ -18,7 +18,7 @@ class CostFilter extends Component {
             costUrl = `${url}/${mealId}?hcost=${hcost}&lcost=${lcost}`
         }
         axios.get(costUrl)
-            .then((res) => { this.props.restPerCost(res.data) })
+            .then((res) => { this.props.restPerCost(res.data,"none") })
 
     }
 

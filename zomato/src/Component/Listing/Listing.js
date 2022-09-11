@@ -14,9 +14,15 @@ class Listing extends Component {
 
     this.state = {
       restaurants: "",
+      boxShown: "none"
     };
   }
-
+  closebtn = () => {
+    this.setState({ boxShown: "none" });
+  }
+  openbtn = () => {
+    this.setState({ boxShown: "block" });
+  }
   setDataPerFilter = (data) => {
     this.setState({ restaurants: data });
   };
@@ -32,26 +38,39 @@ class Listing extends Component {
   render() {
     return (
       <>
-        <div className="container">
-
-          {/* <div id="filter">
-              <center>
-                <h3>Filters</h3>
-              </center>
-              <hr />
+        <div className="box-container" style={{ display: this.state.boxShown }}>
+          <div className="box-my">
+            <i className="bi bi-x-lg cancel-kar" onClick={this.closebtn}></i>
+            <h2 className="box-head">Filters</h2>
+            <div id="filter">
               <CuisineFilter
                 mealId={this.props.match.params.id}
-                restPerCuisine={(data) => {
+                restPerCuisine={(data, show) => {
                   this.setDataPerFilter(data);
+                  this.setState({boxShown: show});
                 }}
               />
               <hr />
               <CostFilter
-                restPerCost={(data) => {
+                restPerCost={(data, show) => {
                   this.setDataPerFilter(data);
+                  this.setState({boxShown: show});
                 }}
               />
-            </div> */}
+            </div>
+          </div>
+        </div>
+
+        <div className="container">
+          <div className="filter-my">
+            <div onClick={this.openbtn} className="filters" type="button"><i className="bi bi-funnel-fill"></i> Filter</div>
+            <div className="filters" type="button"><i className="bi bi-arrow-down-up"></i> Delivery time</div>
+            <div className="filters" type="button">Rating 4.0+</div>
+            <div className="filters" type="button">Pure veg</div>
+            <div className="filters" type="button">More filter <i className="bi bi-chevron-down"></i></div>
+          </div>
+
+
 
           <div className="path-to-2">
             <ListingDisplay listData={this.state.restaurants} />

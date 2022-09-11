@@ -16,7 +16,7 @@ class CuisineFilter extends Component{
             cuisineUrl = `${url}/${mealId}?cuisineId=${cuisineId}`
         }
         axios.get(cuisineUrl)
-        .then((res) => {this.props.restPerCuisine(res.data)})
+        .then((res) => {this.props.restPerCuisine(res.data,"none")})
 
     }
 

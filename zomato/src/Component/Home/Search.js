@@ -15,7 +15,7 @@ class Search extends Component {
       location: "",
       restaurants: "",
       show: "none",
-      index: 3,
+      index: 4,
     };
   }
 
@@ -46,7 +46,7 @@ class Search extends Component {
     if (scrolled > 120 && this.state.index > 0) {
       this.setState({ index: 0 });
     } else if (scrolled <= 120 && this.state.index === 0) {
-      this.setState({ index: 3 });
+      this.setState({ index: 4 });
     }
   };
   // divpi calling on page load

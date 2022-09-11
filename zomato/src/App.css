@@ -83,7 +83,7 @@ h6 {
 #header-list {
   width: 100%;
   position: sticky;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   left: 0;
   height: 75px;
@@ -413,12 +413,8 @@ footer a {
 
 .filter-my {
   display: flex;
-  width: 100%;
-  height: 45px;
   color: grey;
   padding: 5px;
-  margin: auto;
-  max-width: 1100px;
   overflow-x: auto;
   overflow-y: hidden;
 }
@@ -454,6 +450,7 @@ footer a {
   border: 2px solid rgb(227, 216, 216);
   padding: 5px;
   border-radius: 10px;
+  cursor: pointer;
   background-color: white;
 }
 
@@ -665,31 +662,7 @@ footer a {
   border-radius: 5px 0px 0px 5px;
 }
 
-/*Modal css*/
 
-.modal-flex-body {
-  display: flex;
-  justify-content: left;
-  align-items: flex-start;
-}
-
-.filter-p-1 {
-  width: 30%;
-  background-color: rgb(243, 239, 239);
-}
-
-.filter-p-2 {
-  width: 60%;
-  padding: 10px;
-}
-
-.filter-p-1 h4 {
-  padding: 10px;
-}
-
-.filter-p-1 a {
-  color: black;
-}
 
 /* Details page */
 
