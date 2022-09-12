@@ -41,12 +41,27 @@ class PlaceOrder extends Component {
                 return (
                     <div className="orderItems" key={item.menu_id}>
                         <img src={item.menu_image} alt={item.menu_name} />
+                        <button className="btn btn-light"
+                            onClick={() => { this.addItem(item.menu_id) }}>
+                            <i className="bi bi-plus"></i>
+                        </button> {this.state.count[i]}
+                        <button className="btn btn-light"
+                            onClick={() => { this.removeItem(item.menu_id) }}>
+                            <span className="bi bi-dash"></span>
+                        </button>
                         <h4>{item.menu_name}</h4>
                         <h5>Rs. {item.menu_price}  x {this.state.count[i]}</h5>
                     </div>
                 )
             })
         }
+    }
+    addItem = (item) => {
+        console.log(item);
+    }
+    removeItem = (item) => {
+
+        console.log(item);
     }
     myCalulation = () => {
         let count = [];
