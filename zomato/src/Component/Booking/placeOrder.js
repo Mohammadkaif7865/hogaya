@@ -17,7 +17,9 @@ class PlaceOrder extends Component {
             cost: 0,
             phone: sessionStorage.getItem('phone') ? sessionStorage.getItem('phone') : '',
             address: 'Hno 28',
-            menuItem: ''
+            menuItem: '',
+            orderId: "",
+            count: ""
         }
     }
 
@@ -32,22 +34,69 @@ class PlaceOrder extends Component {
             },
             body: JSON.stringify(obj)
         })
-            // .then(this.props.history.push('/viewBooking'));
     }
     renderItem = (data) => {
         if (data) {
-            return data.map((item) => {
+            return data.map((item, i) => {
                 return (
                     <div className="orderItems" key={item.menu_id}>
                         <img src={item.menu_image} alt={item.menu_name} />
-                        <h5>{item.menu_name}</h5>
-                        <h4>Rs. {item.menu_price}</h4>
+                        <h4>{item.menu_name}</h4>
+                        <h5>Rs. {item.menu_price}  x {this.state.count[i]}</h5>
                     </div>
                 )
             })
         }
     }
+    myCalulation = () => {
+        let count = [];
+        let j = 1;
+        for (let i = 0; i < this.state.orderId.length; i++) {
+            if (this.state.orderId[i] === this.state.orderId[i + 1]) {
+                j++;
+            }
+            else {
+                count.push(j);
+                j = 1;
 
+            }
+
+        }
+        this.setState({ count: count });
+        sessionStorage.setItem('repeatCount', count);
+        let totalPrice = 0;
+        if (this.state.menuItem) {
+            this.state.menuItem.map((item, i) => {
+                totalPrice = totalPrice + count[i] * parseFloat(item.menu_price)
+                return 'ok'
+            })
+        }
+        this.setState({ cost: totalPrice });
+    }
+    //call api 
+    componentDidMount() {
+        let orderId = [];
+        sessionStorage.getItem('menu').split(',').map((item) => {
+            orderId.push(parseInt(item));
+            return 'ok'
+        })
+        this.setState({ orderId: orderId });
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(orderId)
+        }).then((res) => res.json()).then((data) => {
+            this.setState({ menuItem: data }, () => {
+                this.myCalulation();
+                return "ok";
+            })
+        })
+
+        // this.myCalulation();
+    }
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value })
     }
@@ -97,12 +146,12 @@ class PlaceOrder extends Component {
                                     <input id="address" name="address" className="form-control"
                                         value={this.state.address} onChange={this.handleChange} />
                                 </div>
-                                <div className="row">
+                                <div className="container">
                                     {this.renderItem(this.state.menuItem)}
-                                    <div className="col-md-12">
-                                        <h2>Total Price is Rs.{this.state.cost}</h2>
-                                    </div>
+
+
                                 </div>
+                                <h2>Total Price is Rs.{this.state.cost}</h2>
                                 <button className="btn btn-success" onClick={this.checkout} type="submit">PlaceOrder</button>
                             </form>
                         </div>
@@ -112,47 +161,6 @@ class PlaceOrder extends Component {
                 </div>
             </>
         )
-    }
-
-    //call api 
-    componentDidMount() {
-        let menuItem = sessionStorage.getItem('menu');
-        let orderId = [];
-        menuItem.split(',').map((item) => {
-            orderId.push(parseInt(item));
-            return 'ok'
-        })
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(orderId)
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                let count = [];
-                let j = 1;
-                for (let i = 0; i < orderId.length; i++) {
-                    if (orderId[i] === orderId[i + 1]) {
-                        j++;
-                    }
-                    else {
-                        count.push(j);
-                        j = 1;
-
-                    }
-
-                }
-                sessionStorage.setItem('repeatCount', count);
-                let totalPrice = 0;
-                data.map((item, i) => {
-                    totalPrice = totalPrice + count[i] * parseFloat(item.menu_price)
-                    return 'ok'
-                })
-                this.setState({ menuItem: data, cost: totalPrice })
-            })
     }
 
 }

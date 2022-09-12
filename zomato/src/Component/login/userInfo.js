@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link, withRouter } from "react-router-dom";
+import {
+    withRouter
+} from "react-router-dom";
 const url = "https://authmdkaif.herokuapp.com/api/auth/getInfo";
 function UserInfo(props) {
     const [user, setUser] = useState("");
@@ -23,7 +25,7 @@ function UserInfo(props) {
         else {
             console.log('Invalid token');
         }
-    },[])
+    }, [])
 
 
     return (
@@ -33,7 +35,7 @@ function UserInfo(props) {
                     <h3>Name : {user.name}</h3>
                     <h3>Phone Number : {user.phone}</h3>
                     <h3>Email : {user.email}</h3>
-                    <Link to="/" className="btn btn-warning">Back to Home</Link>
+                    <button onClick={() => props.history.go(-2)} className="btn btn-warning">Go back</button>
 
                 </div> :
                     <div className="container">

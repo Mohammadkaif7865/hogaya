@@ -745,6 +745,7 @@ h4 {
 .cart {
   position: relative;
   top: 0;
+  cursor: pointer;
   left: 0;
   font-size: 40px;
   width: 50px;
@@ -785,9 +786,9 @@ h4 {
 
 .rest-header {
   position: sticky;
-  position: -webkit-sticky;
-  top: 0;
+  top: 75px;
   left: 0;
+  text-align: center;
   background-color: white;
   z-index: 4;
 }

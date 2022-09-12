@@ -15,6 +15,7 @@ class RestDetails extends Component {
       details: "",
       menuList: "",
       userItem: "",
+      initItems: [],
       images: "",
       mealId: sessionStorage.getItem("mealId")
         ? sessionStorage.getItem("mealId")
@@ -23,7 +24,8 @@ class RestDetails extends Component {
   }
 
   addToCart = (data) => {
-    this.setState({ userItem: data });
+    let items = [...this.state.initItems, ...data]
+    this.setState({ userItem: items });
   };
 
   proceed = () => {
@@ -78,19 +80,21 @@ class RestDetails extends Component {
 
           </div>
         </div>
-        <div className="container">
-          <div className="rest-header">
+        <div className="container rest-header">
+          <div >
             <div className="cart">
-              <span className="cart-counts" id="cart-counts">{this.state.userItem.length}</span>
+              <span className="cart-counts" id="cart-counts" onClick={this.proceed}>{this.state.userItem.length}</span>
               <i className="bi bi-cart2 cart-logo"></i>
             </div>
             <h1>{this.state.details.restaurant_name}</h1>
 
-            <div style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-              <span className="rest-header-review"><u>Dining review  </u><span style={{ borderRadius: "5px", backgroundColor: "rgb(222, 168, 6)", color: "white", padding: "5px" }}>{this.state.details.average_rating} <i className="bi bi-star-fill "></i></span>
-              </span>
-              <span className="rest-header-review"><u>Delivery review </u> <span style={{ borderRadius: "5px", backgroundColor: "green", color: "white", padding: "5px" }}>{this.state.details.average_rating} <i className="bi bi-star-fill "></i></span></span>
-            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+            <span className="rest-header-review"><u>Dining review  </u><span style={{ borderRadius: "5px", backgroundColor: "rgb(222, 168, 6)", color: "white", padding: "5px" }}>{this.state.details.average_rating} <i className="bi bi-star-fill "></i></span>
+            </span>
+            <span className="rest-header-review"><u>Delivery review </u> <span style={{ borderRadius: "5px", backgroundColor: "green", color: "white", padding: "5px" }}>{this.state.details.average_rating} <i className="bi bi-star-fill "></i></span></span>
           </div>
           <div className="address-rest">
             <p>
@@ -101,69 +105,22 @@ class RestDetails extends Component {
             </p>
           </div>
           <div className="user-and-restaurant">
-            <button className="btn btn-danger" type="button"><i className="bi bi-star"></i> Add Review</button>
-            <button className="btn btn-light border-2-grey" type="button"><i className="bi bi-arrow-90deg-right color-red"></i> Direction</button>
-            <button className="btn btn-light border-2-grey" type="button"><i className="bi bi-bookmark-plus color-red"></i> Bookmark</button>
-            <button className="btn btn-light border-2-grey" type="button"><i className="bi bi-share-fill color-red"></i> Share</button>
-            <Link to="/" className="btn btn-danger">
-              Back
-            </Link>{" "}
-            &nbsp;
-            <button className="btn btn-success" onClick={this.proceed}>
+            <button className="btn btn-danger" onClick={this.proceed}>
               CheckOut
             </button>
+            {" "}
+
+            <button className="btn btn-light border-2-grey
+            " type="button" onClick={this.props.history.goBack}>Back</button>
+            {" "}
+            <button className="btn btn-light border-2-grey" type="button"><i className="bi bi-arrow-90deg-right color-red"></i> Direction</button>
+            {" "}
+            <button className="btn btn-light border-2-grey" type="button"><i className="bi bi-bookmark-plus color-red"></i> Bookmark</button>
+            {" "}
+            <button className="btn btn-light border-2-grey" type="button"><i className="bi bi-share-fill color-red"></i> Share</button>
+
           </div>
         </div>
-        {/* <div id="mainContent">
-          <div className="imgDiv">
-            <img src={this.state.details.restaurant_thumb} alt="snacks" />
-          </div>
-          <div className="contentDiv">
-            <h1>{details.restaurant_name}</h1>
-            <span>231 Customers Rating is {details.rating_text}</span>
-            <h3>
-              <del>Old Pric: 1000</del>
-            </h3>
-            <h3>New Price: Rs.{details.cost}</h3>
-            <h3>Test Food with Refreshing Taste</h3>
-            <div className="feature_container">
-              <div className="feature">
-                <img
-                  src="https://i.ibb.co/wJvrhYg/veg.png"
-                  alt="veg"
-                  className="imgIcon"
-                />
-                <p>Pure Veg</p>
-              </div>
-              <div className="feature">
-                <img
-                  src="https://i.ibb.co/mD3jpgc/sentizied.png"
-                  alt="veg"
-                  className="imgIcon"
-                />
-                <p>Fully Senatized</p>
-              </div>
-              <div className="feature">
-                <img
-                  src="https://i.ibb.co/kHrm3Mh/delivery.png"
-                  alt="veg"
-                  className="imgIcon"
-                />
-                <p>Free Delivery</p>
-              </div>
-            </div>
-            <h2>Currently Open</h2>
-            <div>
-              <Link to="/" className="btn btn-danger">
-                Back
-              </Link>{" "}
-              &nbsp;
-              <button className="btn btn-success" onClick={this.proceed}>
-                CheckOut
-              </button>
-            </div>
-          </div>
-        </div> */}
         <div className="container">
           <MenuDisplay
             menudata={this.state.menuList}
@@ -178,9 +135,16 @@ class RestDetails extends Component {
 
   // calling with async await
   async componentDidMount() {
+    let initalItems = sessionStorage.getItem("menu") ? sessionStorage.getItem('menu').split(",") : [];
+    initalItems.map((item) => {
+      this.state.initItems.push(Number(item));
+      return "ok";
+    })
+    if (this.state.initItems.length > 0) {
+      this.setState({ userItem: this.state.initItems })
+    }
     let restId = this.props.location.search.split("=")[1];
     let response = await axios.get(`${url}/details/${restId}`);
-    // console.log(">>>>", response.data);
     let menu = await axios.get(`${url}/menu/${restId}`);
     this.setState({ details: response.data[0], menuList: menu.data, images: response.data[0].image_gallery });
     this.scrollToTop();
