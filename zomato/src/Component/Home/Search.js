@@ -108,7 +108,7 @@ class Search extends Component {
           }
           {
             this.props.name ? <Link to="/viewBooking" className="n-u-i" onClick={this.handleClose}>
-              <p>Orders / Cart</p>
+              <p>Orders</p>
             </Link> : null
           }
         </div>

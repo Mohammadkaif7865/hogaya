@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { Link, withRouter } from "react-router-dom";
 import "../App.css";
 import "./offcanvas.css";
@@ -33,7 +33,7 @@ function Header(props) {
         }
         {
           props.name ? <Link to="/viewBooking" className="n-u-i" onClick={handleClose}>
-            <p>Orders / Cart</p>
+            <p>Orders</p>
           </Link> : null
         }
       </div>
