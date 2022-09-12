@@ -33,7 +33,7 @@ function UserInfo(props) {
                     <h3>Name : {user.name}</h3>
                     <h3>Phone Number : {user.phone}</h3>
                     <h3>Email : {user.email}</h3>
-                    <Link to="/" className="btn btn-primary">Back to Home</Link>
+                    <Link to="/" className="btn btn-warning">Back to Home</Link>
 
                 </div> :
                     <div className="container">

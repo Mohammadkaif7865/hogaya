@@ -79,7 +79,7 @@ function Header(props) {
             }
             {
               props.name ? <Link to="/viewBooking" className="n-u-i">
-                <p>Orders / Cart</p>
+                <p>Orders</p>
               </Link> : null
             }
             <Link to="/">
