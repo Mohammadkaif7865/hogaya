@@ -40,15 +40,14 @@ class PlaceOrder extends Component {
             return data.map((item, i) => {
                 return (
                     <div className="orderItems" key={item.menu_id}>
+                        <span className="tagId">{item.menu_id}</span>
                         <img src={item.menu_image} alt={item.menu_name} />
-                        <button className="btn btn-light"
+                        <i className="bi bi-plus btn btn-light icon-font"
                             onClick={() => { this.addItem(item.menu_id) }}>
-                            <i className="bi bi-plus"></i>
-                        </button> {this.state.count[i]}
-                        <button className="btn btn-light"
+                        </i> {this.state.count[i]}
+                        <i className="bi bi-dash btn btn-light icon-font"
                             onClick={() => { this.removeItem(item.menu_id) }}>
-                            <span className="bi bi-dash"></span>
-                        </button>
+                        </i>
                         <h4>{item.menu_name}</h4>
                         <h5>Rs. {item.menu_price}  x {this.state.count[i]}</h5>
                     </div>
@@ -57,11 +56,44 @@ class PlaceOrder extends Component {
         }
     }
     addItem = (item) => {
-        console.log(item);
+        this.state.orderId.push(item);
+        this.setState({ orderId: this.state.orderId.sort(function (a, b) { return a - b }) })
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.state.orderId)
+        }).then((res) => res.json()).then((data) => {
+            this.setState({ menuItem: data }, () => {
+                this.myCalulation();
+                return "ok";
+            })
+        })
+        sessionStorage.setItem('menu', this.state.orderId);
     }
     removeItem = (item) => {
 
-        console.log(item);
+        if (this.state.orderId.indexOf(item) > -1) {
+            this.state.orderId.splice(this.state.orderId.indexOf(item), 1)
+            this.setState({ orderId: this.state.orderId.sort(function (a, b) { return a - b }) })
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(this.state.orderId)
+            }).then((res) => res.json()).then((data) => {
+                console.log(data);
+                this.setState({ menuItem: data }, () => {
+                    this.myCalulation();
+                    return "ok";
+                })
+            })
+            sessionStorage.setItem('menu', this.state.orderId);
+        }
     }
     myCalulation = () => {
         let count = [];
