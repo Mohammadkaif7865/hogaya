@@ -86,7 +86,6 @@ class PlaceOrder extends Component {
                 },
                 body: JSON.stringify(this.state.orderId)
             }).then((res) => res.json()).then((data) => {
-                console.log(data);
                 this.setState({ menuItem: data }, () => {
                     this.myCalulation();
                     return "ok";
