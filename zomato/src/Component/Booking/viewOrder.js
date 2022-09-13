@@ -46,7 +46,6 @@ class ViewOrder extends Component {
             )
             let date = '';
             queryp.split('&')[2].split('=')[1].split("%20").map((data) => date = date + " " + data)
-            // console.log(bank_name, date, queryp.split('&')[0].split('=')[1]);
             if (queryp) {
                 let data = {
                     "status": queryp.split('&')[0].split('=')[1],
@@ -54,7 +53,6 @@ class ViewOrder extends Component {
                     "bank_name": bank_name,
                 }
                 let id = queryp.split('&')[1].split('=')[1].split('_')[1];
-                console.log(id);
                 fetch(`${updateUrl}/${id}`, {
                     method: 'PUT',
                     headers: {
@@ -62,7 +60,7 @@ class ViewOrder extends Component {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(data)
-                }).then(response => response.json()).then(response => console.log(response));
+                })
             }
         }
         // ! onw sec delay beacuse of api ping
