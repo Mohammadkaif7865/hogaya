@@ -30,18 +30,18 @@ class MenuDisplay extends Component {
         if(menudata){
             return menudata.map((item) => {
                 return(
-                    <div key={item.menu_id}>
+                    <div key={item.menu_id} className="menuDisplay">
                             <div className="col-md-7">
                                 <b>{item.menu_id}</b>
                                 <img src={item.menu_image} style={{height:80,width:80}} alt="img"/>&nbsp;
                                 {item.menu_name} - Rs.{item.menu_price}
                             </div>
                             <div className="col-md-4">
-                                <button className="btn btn-success"
+                                <button className="btn btn-light icon-font2"
                                 onClick={() => {this.placeOrder(item.menu_id)}}>
                                     <i className="bi bi-plus"></i>
                                 </button> &nbsp;
-                                <button className="btn btn-danger"
+                                <button className="btn btn-light icon-font2"
                                 onClick={() => {this.removeOrder(item.menu_id)}}>
                                     <span className="bi bi-dash"></span>
                                 </button>

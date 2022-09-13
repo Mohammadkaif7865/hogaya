@@ -26,6 +26,8 @@ class PlaceOrder extends Component {
     checkout = () => {
         let obj = this.state;
         obj.menuItem = sessionStorage.getItem('menu');
+        sessionStorage.setItem('menu',"");
+        sessionStorage.setItem('repeatCount',"");
         fetch(purl, {
             method: 'POST',
             headers: {
