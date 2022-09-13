@@ -169,7 +169,7 @@ class PlaceOrder extends Component {
                             <h3>Your Order For {this.state.hotel_name}</h3>
                         </div>
                         <div className="panel-body">
-                            <form action="https://developerpayment.herokuapp.com/paynow" method="POST">
+                            <form action="https://paytmmerchant.herokuapp.com/paynow" method="POST">
                                 <input type="hidden" name="cost" value={this.state.cost} />
                                 <input type="hidden" name="id" value={this.state.id} />
                                 <input type="hidden" name="hotel_name" value={this.state.hotel_name} />
