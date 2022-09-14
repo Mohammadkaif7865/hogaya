@@ -90,6 +90,16 @@ class Search extends Component {
     return (
       <>
         <div id="mySidenav" className="sidenav" style={{ display: this.state.show }}>
+        <Link to="/" className="title-my-2" onClick={this.handleClose}>
+              <h1
+                style={{
+                  fontSize: "calc(30px + 1vw)",
+                  fontStyle: "italic",
+                }}
+              >
+                Zomato
+              </h1>
+            </Link>
           <span to="/" className="closebtn" onClick={this.handleClose} >&times;</span>
           {
             !this.props.name ? <Link to="/register" className="n-u-i" onClick={this.handleClose}>
