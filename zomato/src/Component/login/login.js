@@ -43,7 +43,7 @@ class Login extends Component {
             <>
                 <div className="container">
                     <hr/>
-                    <div className="panel panel-danger">
+                    <div className="panel panel-primary">
                         <div className="panel-heading">
                             <h3>Login</h3>
                         </div>
