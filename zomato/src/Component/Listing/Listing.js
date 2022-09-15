@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import ListingDisplay from "./ListingDisplay";
 import CuisineFilter from "../Filters/cuisineFilter";
 import CostFilter from "../Filters/costFilter";
-// import OwlCarousel from '../../../node_modules/react-owl-carousel';  
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
@@ -59,40 +58,6 @@ class Listing extends Component {
                in place of 'smooth' */
     });
   };
-  renderTop = () => {
-    if (this.state.topRated) {
-      if (this.state.topRated.length > 0) {
-        console.log(this.state.topRated);
-        return this.state.topRated.map((item) => {
-          return (
-            <div key={item.restaurant_id}>
-              <Link to={`/details?restId=${item.restaurant_id}`} > <img src={item.
-                restaurant_thumb} id="owl-img" alt="Food" /></Link>
-              <p>{item.restaurant_name}</p>
-            </div>
-          );
-        });
-      } else {
-        return (
-          <div>
-            <h2>No Data For the Filter</h2>
-          </div>
-        );
-      }
-    } else {
-      return (
-        <div>
-          <img
-            src="https://i.ibb.co/GRf0ygr/1-Cs-J05-WEGfun-YMLGfs-T2s-XA.gif"
-            alt="loader"
-          />
-          <h2>Loading....</h2>
-        </div>
-      );
-    }
-  };
-
-
   render() {
     return (
       <>
@@ -128,10 +93,23 @@ class Listing extends Component {
             <div className="filters" type="button">More filter <i className="bi bi-chevron-down"></i></div>
           </div>
           <h3>Here are the top rated restuarants near by you</h3>
-          <OwlCarousel className="owl-theme" {...options}
-          >
-            {this.renderTop()}
-          </OwlCarousel>
+          {
+            this.state.topRated.length && (
+              <OwlCarousel className="owl-theme" {...options}>
+                {
+                  this.state.topRated.map((item, i) => {
+
+                    return <Link to={`/details?restId=${item.restaurant_id}`} key={item.restaurant_id} ><div >
+                      <img src={item.restaurant_thumb} id="owl-img" alt="Food" />
+                      <p id="owl-para">flat {item.restOffer}% off </p>
+                      <p id="owl-para">{item.restaurant_name}</p>
+                    </div>
+                    </Link>
+                  })
+                }
+              </OwlCarousel>
+            )
+          }
 
           <div className="path-to-2">
             <ListingDisplay listData={this.state.restaurants} />
@@ -148,13 +126,18 @@ class Listing extends Component {
     sessionStorage.setItem("mealId", mealId);
     axios.get(`${url}?mealId=${mealId}`).then((res) => {
       this.setState({
-        restaurants: res.data, topRated: res.data.sort(function (a, b) {
-          return parseFloat(b.average_rating) - parseFloat(a.average_rating);
+        restaurants: res.data
+      });
+    });
+    axios.get(`${url}?mealId=${mealId}`).then((res) => {
+      this.setState({
+        topRated: res.data.sort(function (a, b) {
+          return (parseFloat(b.restOffer) - parseFloat(a.restOffer));
         })
       });
-
-    });
+    }, () => console.log(this.state.topRated));
     this.scrollToTop();
+
   }
 }
 

@@ -28,8 +28,11 @@
   right: 4px;
   cursor: pointer;
 }
-#owl-img{
+#owl-img {
   height: 200px;
   width: 200px;
   border-radius: 50%;
+}
+#owl-para {
+  text-align: center;
 }
