@@ -92,7 +92,7 @@ class Listing extends Component {
             <div className="filters" type="button">Pure veg</div>
             <div className="filters" type="button">More filter <i className="bi bi-chevron-down"></i></div>
           </div>
-          <h3>Here are the top rated restuarants near by you</h3>
+          <h3>Top discount restaurants near you</h3>
           {
             this.state.topRated.length && (
               <OwlCarousel className="owl-theme" {...options}>

@@ -199,7 +199,7 @@ class PlaceOrder extends Component {
 
 
                                 </div>
-                                <h2>Total Price is Rs.{this.state.cost}</h2>
+                                <h2>Total Price is ₹{this.state.cost}</h2>
                                 <button className="btn btn-success" onClick={this.checkout} type="submit">PlaceOrder</button>
                             </form>
                         </div>

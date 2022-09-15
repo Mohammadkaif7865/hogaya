@@ -20,7 +20,7 @@ const ListingDisplay = (props) => {
                 <div className="details-listing">
                   <h4>{item.restaurant_name}</h4>
                   <p>{item.address}</p>
-                  <p>Rs. {item.cost}</p>
+                  <p>Best meal @ ₹{item.cost} \-</p>
                   <p>{item.mealTypes[0].mealtype_name}<i className="bi bi-dot"></i>{item.cuisines[0].cuisine_name}<i className="bi bi-dot"></i> {item.cuisines[1].cuisine_name}<i className="bi bi-dot"></i>{item.mealTypes[1].mealtype_name}</p>
                 </div>
               </div>
