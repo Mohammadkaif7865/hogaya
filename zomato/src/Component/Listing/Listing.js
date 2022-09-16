@@ -20,7 +20,7 @@ const options = {
 
   responsive: {
     0: {
-      items: 1.5
+      items: 2
     },
     600: {
       items: 3
