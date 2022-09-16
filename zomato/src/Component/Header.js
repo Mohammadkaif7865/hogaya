@@ -78,17 +78,17 @@ function Header(props) {
                 style={{
                   fontSize: "calc(30px + 1vw)",
                   fontStyle: "italic",
-                  textAlign: "center",
+                  textAlign: "center"
                 }}
               >
                 Zomato
               </h1>
             </Link>
             <div className="weather">
-               <div>
-               <img src={src} alt="weather-Img" />
-              <span>{temp}&#8451;</span> &nbsp;
-               </div>
+              <div>
+                <img src={src} alt="weather-Img" />
+                <span>{temp}&#8451;</span> &nbsp;
+              </div>
               <span>{city}</span>
             </div>
           </div>
@@ -120,6 +120,8 @@ function Header(props) {
                   fontSize: "calc(30px + 1vw)",
                   fontStyle: "italic",
                   textAlign: "center",
+                  margin: 0,
+                  padding: 0,
                 }}
               >
                 Zomato

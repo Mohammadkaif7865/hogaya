@@ -16,7 +16,7 @@ const options = {
   margin: 10,
   nav: true,
   dots: false,
-  navText: [`<i class="bi bi-chevron-left" style='background-color:white; border-radius: 10px;position: absolute; height: 80px; width: 50px;top: 25%; font-size:40px; padding-top: 10px; left: 0px; color:black; border: 2px solid  rgb(207, 210, 213); '></i>`, `<i class="bi bi-chevron-right" style='background-color:white; border-radius: 10px;position: absolute; height: 80px; width: 50px;top: 25%; font-size:40px; padding-top: 10px; right: 0px; color:black; border: 2px solid  rgb(207, 210, 213); '></i>`],
+  navText: [`<i class="bi bi-chevron-left" style='background-color:white; border-radius: 10px;position: absolute; top: 25%; font-size:min(5vw,40px);  left: 0px; color:black; border: 2px solid  rgb(207, 210, 213); '></i>`, `<i class="bi bi-chevron-right" style='background-color:white; border-radius: 10px;position: absolute; top: 25%; font-size:min(5vw,40px);  right: 0px; color:black; border: 2px solid  rgb(207, 210, 213); '></i>`],
 
   responsive: {
     0: {
