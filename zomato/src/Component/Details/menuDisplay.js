@@ -31,12 +31,12 @@ class MenuDisplay extends Component {
             return menudata.map((item) => {
                 return (
                     <div key={item.menu_id} className="menuDisplay">
-                        <div className="col-md-7">
-                            <b>{item.menu_id}</b>
-                            <img src={item.menu_image} style={{ height: 80, width: 80 }} alt="img" />&nbsp;
-                            {item.menu_name} - ₹{item.menu_price}
+                        <div className="imageContainer">
+                            <span>{item.menu_id}</span>
+                            <img src={item.menu_image} alt="img" />
                         </div>
-                        <div className="col-md-4">
+                        <div className="desMeal">
+                            <p> {item.menu_name} - ₹{item.menu_price}</p>
                             <button className="btn btn-light icon-font2"
                                 onClick={() => { this.placeOrder(item.menu_id) }}>
                                 <i className="bi bi-plus"></i>
@@ -46,6 +46,21 @@ class MenuDisplay extends Component {
                                 <span className="bi bi-dash"></span>
                             </button>
                         </div>
+                        {/* <div >
+                            <b>{item.menu_id}</b>
+                            <img src={item.menu_image} alt="img" />&nbsp;
+                            {item.menu_name} - ₹{item.menu_price}
+                        </div>
+                        <div>
+                            <button className="btn btn-light icon-font2"
+                                onClick={() => { this.placeOrder(item.menu_id) }}>
+                                <i className="bi bi-plus"></i>
+                            </button> &nbsp;
+                            <button className="btn btn-light icon-font2"
+                                onClick={() => { this.removeOrder(item.menu_id) }}>
+                                <span className="bi bi-dash"></span>
+                            </button>
+                        </div> */}
                     </div>
 
                 )
