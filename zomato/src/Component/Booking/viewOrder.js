@@ -17,7 +17,7 @@ class ViewOrder extends Component {
     }
 
     render() {
-        if (sessionStorage.getItem('loginStatus') === 'false') {
+        if (!sessionStorage.getItem('name')) {
             return (
                 <div>
 
