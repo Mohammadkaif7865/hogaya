@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import './placeOrder.css';
 
 
@@ -24,17 +25,17 @@ class PlaceOrder extends Component {
     }
     scrollToTop = () => {
         window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-          /* you can also use 'auto' behaviour
-                   in place of 'smooth' */
+            top: 0,
+            behavior: "smooth",
+            /* you can also use 'auto' behaviour
+                     in place of 'smooth' */
         });
-      };
+    };
     checkout = () => {
         let obj = this.state;
         obj.menuItem = sessionStorage.getItem('menu');
-        sessionStorage.setItem('menu',"");
-        sessionStorage.setItem('repeatCount',"");
+        sessionStorage.setItem('menu', "");
+        sessionStorage.setItem('repeatCount', "");
         fetch(purl, {
             method: 'POST',
             headers: {
@@ -163,6 +164,7 @@ class PlaceOrder extends Component {
 
                     <center>
                         <h2>Login First To Place Order</h2>
+                        <Link to="/login" className="btn btn-primary" >Login page</Link>
                     </center>
                 </div>
             )
