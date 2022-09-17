@@ -22,7 +22,14 @@ class PlaceOrder extends Component {
             count: ""
         }
     }
-
+    scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+          /* you can also use 'auto' behaviour
+                   in place of 'smooth' */
+        });
+      };
     checkout = () => {
         let obj = this.state;
         obj.menuItem = sessionStorage.getItem('menu');
@@ -143,7 +150,7 @@ class PlaceOrder extends Component {
             })
         })
 
-        // this.myCalulation();
+        this.scrollToTop();
     }
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value })
