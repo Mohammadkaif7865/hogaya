@@ -32,10 +32,21 @@ function UserInfo(props) {
         <>
             {
                 user ? <div className="container">
-                    <h3>Name : {user.name}</h3>
-                    <h3>Phone Number : {user.phone}</h3>
-                    <h3>Email : {user.email}</h3>
-                    <button onClick={() => props.history.go(-2)} className="btn btn-warning">Go back</button>
+                    <div className="panel panel-primary">
+                        <div className="panel-heading">User Info</div>
+                        <div className="panel-body">
+                            <div> <b>Name</b> : {user.name}</div>
+                            <div> <b>Phone Number</b> : {user.phone}</div>
+                            <div> <b>Email</b> : {user.email}</div>
+                        </div>
+                        <div className="panel-footer"> <button onClick={() => props.history.go(-2)} className="btn btn-success">Go back</button>
+                            <div style={{ textAlign: 'center' }}>
+                                <small>Your info security an <u>privacy</u> is our top priority and we are compeletely <u>responsible</u> for any data breach</small>
+                            </div>
+                        </div>
+                    </div>
+
+
 
                 </div> :
                     <div className="container">
