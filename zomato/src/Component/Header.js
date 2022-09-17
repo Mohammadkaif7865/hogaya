@@ -15,7 +15,7 @@ function Header(props) {
     setTemp(info.list[0].temp.day);
     setCity(info.city.name);
     setSrc(
-      "http://openweathermap.org/img/w/" + info.list[0].weather[0].icon + ".png"
+      "https://openweathermap.org/img/w/" + info.list[0].weather[0].icon + ".png"
     );
   }
 
