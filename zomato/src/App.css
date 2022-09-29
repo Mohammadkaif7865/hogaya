@@ -704,8 +704,10 @@ h4 {
 }
 /* * properties of pictures */
 .pic-item {
-  height: 100%;
-  width: 100%;
+  width: 0;
+  height: 0;
+  min-height: 100%;
+  min-width: 100%;
   object-fit: cover;
   filter: brightness(0.85);
   border-radius: 10px;
@@ -722,48 +724,28 @@ h4 {
 .pic1 {
   grid-area: pic1;
   overflow: hidden;
-  min-height: 0;
-  min-width: 0;
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .pic2 {
   grid-area: pic2;
   overflow: hidden;
-  min-height: 0;
-  min-width: 0;
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .pic3 {
   grid-area: pic3;
   overflow: hidden;
   position: relative;
-  min-height: 0;
-  min-width: 0;
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .pic4 {
   grid-area: pic4;
   overflow: hidden;
-  min-height: 0;
-  min-width: 0;
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .no-pic {
   position: relative;
   grid-area: no-pic;
   overflow: hidden;
-  min-height: 0;
-  min-width: 0;
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .my-add-photo {
