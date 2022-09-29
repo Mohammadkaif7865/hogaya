@@ -723,11 +723,15 @@ h4 {
 .pic1 {
   grid-area: pic1;
   overflow: hidden;
+  min-height: 0;
+  min-width: 0;
 }
 
 .pic2 {
   grid-area: pic2;
   overflow: hidden;
+  min-height: 0;
+  min-width: 0;
 }
 
 .pic3 {
@@ -739,12 +743,16 @@ h4 {
 .pic4 {
   grid-area: pic4;
   overflow: hidden;
+  min-height: 0;
+  min-width: 0;
 }
 
 .no-pic {
   position: relative;
   grid-area: no-pic;
   overflow: hidden;
+  min-height: 0;
+  min-width: 0;
 }
 
 .my-add-photo {
