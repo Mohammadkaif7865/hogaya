@@ -702,16 +702,11 @@ h4 {
   margin: auto;
   padding: 10px;
 }
-
+/* * properties of pictures */
 .pic-item {
   height: 100%;
   width: 100%;
-  min-height: 0;
-  min-width: 0;
-  max-width: 100%;
-  max-height: 100%;
   object-fit: cover;
-  opacity: 1;
   filter: brightness(0.85);
   border-radius: 10px;
 }
