@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 
 
-const url = "https://authmdkaif.herokuapp.com/api/auth/register";
+const url = "https://authenticationmdkaif.onrender.com/api/auth/register";
 
 class Register extends Component {
     constructor(props){

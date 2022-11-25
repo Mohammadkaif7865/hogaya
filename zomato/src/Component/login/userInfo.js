@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {
     withRouter
 } from "react-router-dom";
-const url = "https://authmdkaif.herokuapp.com/api/auth/getInfo";
+const url = "https://authenticationmdkaif.onrender.com/api/auth/getInfo";
 function UserInfo(props) {
     const [user, setUser] = useState("");
     useEffect(() => {
