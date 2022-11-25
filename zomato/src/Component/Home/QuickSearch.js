@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./QuickSearch.css";
 import QuickDisplay from "./QuickDisplay";
 
-const url = "https://restaurantmysite.herokuapp.com/mealtype";
+const url = "https://zomatomdkaif.onrender.com/mealtype";
 
 class QuickSearch extends Component {
   constructor() {

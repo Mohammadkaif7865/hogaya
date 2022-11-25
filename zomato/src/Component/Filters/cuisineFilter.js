@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import axios from 'axios';
 import "./filter.css";
 
-const url = "https://restaurantmysite.herokuapp.com/filter";
+const url = "https://zomatomdkaif.onrender.com/filter";
 
 class CuisineFilter extends Component{
 

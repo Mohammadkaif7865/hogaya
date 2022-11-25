@@ -4,8 +4,8 @@ import OrderDisplay from './orderDisplay';
 
 // http://localhost:9100/orders
 // https://restaurantmysite.herokuapp.com/orders
-const url = "https://restaurantmysite.herokuapp.com/orders";
-const updateUrl = "https://restaurantmysite.herokuapp.com/updateOrder"
+const url = "https://zomatomdkaif.onrender.com/orders";
+const updateUrl = "https://zomatomdkaif.onrender.com/updateOrder"
 
 class ViewOrder extends Component {
     constructor(props) {

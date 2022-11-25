@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom';
 import './placeOrder.css';
 
 
-const url = "https://restaurantmysite.herokuapp.com/menuItem";
-const purl = "https://restaurantmysite.herokuapp.com/placeOrder";
+const url = "https://zomatomdkaif.onrender.com/menuItem";
+const purl = "https://zomatomdkaif.onrender.com/placeOrder";
 
 class PlaceOrder extends Component {
     constructor(props) {

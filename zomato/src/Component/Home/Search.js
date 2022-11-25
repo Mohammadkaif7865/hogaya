@@ -4,8 +4,8 @@ import "./Search.css"
 import "../../App.css";
 import "../offcanvas.css";
 
-const url = "https://restaurantmysite.herokuapp.com/location";
-const restUrl = "https://restaurantmysite.herokuapp.com/restaurants";
+const url = "https://zomatomdkaif.onrender.com/location";
+const restUrl = "https://zomatomdkaif.onrender.com/restaurants";
 
 class Search extends Component {
   constructor(props) {

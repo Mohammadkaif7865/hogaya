@@ -10,7 +10,7 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
-const url = "https://restaurantmysite.herokuapp.com/restaurants";
+const url = "https://zomatomdkaif.onrender.com/restaurants";
 const options = {
   loop: false,
   margin: 10,
